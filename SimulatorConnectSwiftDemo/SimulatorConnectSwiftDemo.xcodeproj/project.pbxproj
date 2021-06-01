@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15475BF3AADA92828ED7BE71 /* Pods_SimulatorConnectSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4AF13459490161376FE1FFD /* Pods_SimulatorConnectSwiftDemo.framework */; };
+		EE4FE167265418EE00261CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE166265418EE00261CEA /* AppDelegate.swift */; };
+		EE4FE169265418EE00261CEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE168265418EE00261CEA /* SceneDelegate.swift */; };
+		EE4FE16B265418EE00261CEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE16A265418EE00261CEA /* ViewController.swift */; };
+		EE4FE16E265418EE00261CEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE16C265418EE00261CEA /* Main.storyboard */; };
+		EE4FE170265418F100261CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE16F265418F100261CEA /* Assets.xcassets */; };
+		EE4FE173265418F100261CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE171265418F100261CEA /* LaunchScreen.storyboard */; };
+		EE4FE17E265418F100261CEA /* SimulatorConnectSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE17D265418F100261CEA /* SimulatorConnectSwiftDemoTests.swift */; };
+		EE4FE189265418F100261CEA /* SimulatorConnectSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE188265418F100261CEA /* SimulatorConnectSwiftDemoUITests.swift */; };
+		EE4FE19C26542A2E00261CEA /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE19B26542A2E00261CEA /* AuthenticationPresenter.swift */; };
+		EE7E11602656EEC7009A4EE5 /* DeviceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E115F2656EEC7009A4EE5 /* DeviceTableViewController.swift */; };
+		EE7E11622656FDD9009A4EE5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E11612656FDD9009A4EE5 /* NavigationViewController.swift */; };
+		EE7E1166265D74FB009A4EE5 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E1165265D74FB009A4EE5 /* AppData.swift */; };
+		EE7E1243265ED94D009A4EE5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE7E1242265ED94D009A4EE5 /* awsconfiguration.json */; };
+		EE905D692666A7AC00143D09 /* SimulatorConnect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE905D682666A7AC00143D09 /* SimulatorConnect.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE4FE17A265418F100261CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4FE15B265418EE00261CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4FE162265418EE00261CEA;
+			remoteInfo = SimulatorConnectSwiftDemo;
+		};
+		EE4FE185265418F100261CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4FE15B265418EE00261CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4FE162265418EE00261CEA;
+			remoteInfo = SimulatorConnectSwiftDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EE016F5926616AFB00A21A1F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04F94638DB7F7261C30AAF36 /* Pods-SimulatorConnectSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorConnectSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SimulatorConnectSwiftDemo/Pods-SimulatorConnectSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B33D93609BCF59AEC49E98A9 /* Pods-SimulatorConnectSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorConnectSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SimulatorConnectSwiftDemo/Pods-SimulatorConnectSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D4AF13459490161376FE1FFD /* Pods_SimulatorConnectSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimulatorConnectSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4FE163265418EE00261CEA /* SimulatorConnectSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimulatorConnectSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4FE166265418EE00261CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE4FE168265418EE00261CEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EE4FE16A265418EE00261CEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE4FE16D265418EE00261CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE4FE16F265418F100261CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE4FE172265418F100261CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE4FE174265418F100261CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4FE179265418F100261CEA /* SimulatorConnectSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimulatorConnectSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4FE17D265418F100261CEA /* SimulatorConnectSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorConnectSwiftDemoTests.swift; sourceTree = "<group>"; };
+		EE4FE17F265418F100261CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4FE184265418F100261CEA /* SimulatorConnectSwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimulatorConnectSwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4FE188265418F100261CEA /* SimulatorConnectSwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorConnectSwiftDemoUITests.swift; sourceTree = "<group>"; };
+		EE4FE18A265418F100261CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4FE19B26542A2E00261CEA /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
+		EE7E115F2656EEC7009A4EE5 /* DeviceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewController.swift; sourceTree = "<group>"; };
+		EE7E11612656FDD9009A4EE5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		EE7E1165265D74FB009A4EE5 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		EE7E1242265ED94D009A4EE5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		EE905D682666A7AC00143D09 /* SimulatorConnect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SimulatorConnect.xcframework; path = ../lib/SimulatorConnect.xcframework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE4FE160265418EE00261CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15475BF3AADA92828ED7BE71 /* Pods_SimulatorConnectSwiftDemo.framework in Frameworks */,
+				EE905D692666A7AC00143D09 /* SimulatorConnect.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE176265418F100261CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE181265418F100261CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		247F9DD0326C5C6DDCC21885 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE905D682666A7AC00143D09 /* SimulatorConnect.xcframework */,
+				D4AF13459490161376FE1FFD /* Pods_SimulatorConnectSwiftDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F15DDB4A368F0919422D353 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B33D93609BCF59AEC49E98A9 /* Pods-SimulatorConnectSwiftDemo.debug.xcconfig */,
+				04F94638DB7F7261C30AAF36 /* Pods-SimulatorConnectSwiftDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE4FE15A265418EE00261CEA = {
+			isa = PBXGroup;
+			children = (
+				EE7E1242265ED94D009A4EE5 /* awsconfiguration.json */,
+				EE4FE165265418EE00261CEA /* SimulatorConnectSwiftDemo */,
+				EE4FE17C265418F100261CEA /* SimulatorConnectSwiftDemoTests */,
+				EE4FE187265418F100261CEA /* SimulatorConnectSwiftDemoUITests */,
+				EE4FE164265418EE00261CEA /* Products */,
+				247F9DD0326C5C6DDCC21885 /* Frameworks */,
+				8F15DDB4A368F0919422D353 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EE4FE164265418EE00261CEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE163265418EE00261CEA /* SimulatorConnectSwiftDemo.app */,
+				EE4FE179265418F100261CEA /* SimulatorConnectSwiftDemoTests.xctest */,
+				EE4FE184265418F100261CEA /* SimulatorConnectSwiftDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE4FE165265418EE00261CEA /* SimulatorConnectSwiftDemo */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE19A26542A0700261CEA /* Authentication */,
+				EE4FE166265418EE00261CEA /* AppDelegate.swift */,
+				EE4FE168265418EE00261CEA /* SceneDelegate.swift */,
+				EE4FE16A265418EE00261CEA /* ViewController.swift */,
+				EE4FE16C265418EE00261CEA /* Main.storyboard */,
+				EE4FE16F265418F100261CEA /* Assets.xcassets */,
+				EE4FE171265418F100261CEA /* LaunchScreen.storyboard */,
+				EE4FE174265418F100261CEA /* Info.plist */,
+				EE7E115F2656EEC7009A4EE5 /* DeviceTableViewController.swift */,
+				EE7E11612656FDD9009A4EE5 /* NavigationViewController.swift */,
+				EE7E1165265D74FB009A4EE5 /* AppData.swift */,
+			);
+			path = SimulatorConnectSwiftDemo;
+			sourceTree = "<group>";
+		};
+		EE4FE17C265418F100261CEA /* SimulatorConnectSwiftDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE17D265418F100261CEA /* SimulatorConnectSwiftDemoTests.swift */,
+				EE4FE17F265418F100261CEA /* Info.plist */,
+			);
+			path = SimulatorConnectSwiftDemoTests;
+			sourceTree = "<group>";
+		};
+		EE4FE187265418F100261CEA /* SimulatorConnectSwiftDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE188265418F100261CEA /* SimulatorConnectSwiftDemoUITests.swift */,
+				EE4FE18A265418F100261CEA /* Info.plist */,
+			);
+			path = SimulatorConnectSwiftDemoUITests;
+			sourceTree = "<group>";
+		};
+		EE4FE19A26542A0700261CEA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE19B26542A2E00261CEA /* AuthenticationPresenter.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE4FE162265418EE00261CEA /* SimulatorConnectSwiftDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE4FE18D265418F100261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectSwiftDemo" */;
+			buildPhases = (
+				8C52D5EB5C88E7484B6B4C7B /* [CP] Check Pods Manifest.lock */,
+				EE4FE15F265418EE00261CEA /* Sources */,
+				EE4FE160265418EE00261CEA /* Frameworks */,
+				EE4FE161265418EE00261CEA /* Resources */,
+				151C5DEB5D48B30D99162122 /* [CP] Embed Pods Frameworks */,
+				EE016F5926616AFB00A21A1F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimulatorConnectSwiftDemo;
+			productName = SimulatorConnectSwiftDemo;
+			productReference = EE4FE163265418EE00261CEA /* SimulatorConnectSwiftDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE4FE178265418F100261CEA /* SimulatorConnectSwiftDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE4FE190265418F100261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectSwiftDemoTests" */;
+			buildPhases = (
+				EE4FE175265418F100261CEA /* Sources */,
+				EE4FE176265418F100261CEA /* Frameworks */,
+				EE4FE177265418F100261CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE4FE17B265418F100261CEA /* PBXTargetDependency */,
+			);
+			name = SimulatorConnectSwiftDemoTests;
+			productName = SimulatorConnectSwiftDemoTests;
+			productReference = EE4FE179265418F100261CEA /* SimulatorConnectSwiftDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EE4FE183265418F100261CEA /* SimulatorConnectSwiftDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE4FE193265418F100261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectSwiftDemoUITests" */;
+			buildPhases = (
+				EE4FE180265418F100261CEA /* Sources */,
+				EE4FE181265418F100261CEA /* Frameworks */,
+				EE4FE182265418F100261CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE4FE186265418F100261CEA /* PBXTargetDependency */,
+			);
+			name = SimulatorConnectSwiftDemoUITests;
+			productName = SimulatorConnectSwiftDemoUITests;
+			productReference = EE4FE184265418F100261CEA /* SimulatorConnectSwiftDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE4FE15B265418EE00261CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					EE4FE162265418EE00261CEA = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					EE4FE178265418F100261CEA = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = EE4FE162265418EE00261CEA;
+					};
+					EE4FE183265418F100261CEA = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = EE4FE162265418EE00261CEA;
+					};
+				};
+			};
+			buildConfigurationList = EE4FE15E265418EE00261CEA /* Build configuration list for PBXProject "SimulatorConnectSwiftDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE4FE15A265418EE00261CEA;
+			productRefGroup = EE4FE164265418EE00261CEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE4FE162265418EE00261CEA /* SimulatorConnectSwiftDemo */,
+				EE4FE178265418F100261CEA /* SimulatorConnectSwiftDemoTests */,
+				EE4FE183265418F100261CEA /* SimulatorConnectSwiftDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE4FE161265418EE00261CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE7E1243265ED94D009A4EE5 /* awsconfiguration.json in Resources */,
+				EE4FE173265418F100261CEA /* LaunchScreen.storyboard in Resources */,
+				EE4FE170265418F100261CEA /* Assets.xcassets in Resources */,
+				EE4FE16E265418EE00261CEA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE177265418F100261CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE182265418F100261CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		151C5DEB5D48B30D99162122 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectSwiftDemo/Pods-SimulatorConnectSwiftDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectSwiftDemo/Pods-SimulatorConnectSwiftDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectSwiftDemo/Pods-SimulatorConnectSwiftDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C52D5EB5C88E7484B6B4C7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimulatorConnectSwiftDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE4FE15F265418EE00261CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE7E11622656FDD9009A4EE5 /* NavigationViewController.swift in Sources */,
+				EE4FE19C26542A2E00261CEA /* AuthenticationPresenter.swift in Sources */,
+				EE7E11602656EEC7009A4EE5 /* DeviceTableViewController.swift in Sources */,
+				EE4FE16B265418EE00261CEA /* ViewController.swift in Sources */,
+				EE4FE167265418EE00261CEA /* AppDelegate.swift in Sources */,
+				EE4FE169265418EE00261CEA /* SceneDelegate.swift in Sources */,
+				EE7E1166265D74FB009A4EE5 /* AppData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE175265418F100261CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4FE17E265418F100261CEA /* SimulatorConnectSwiftDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE180265418F100261CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4FE189265418F100261CEA /* SimulatorConnectSwiftDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE4FE17B265418F100261CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE4FE162265418EE00261CEA /* SimulatorConnectSwiftDemo */;
+			targetProxy = EE4FE17A265418F100261CEA /* PBXContainerItemProxy */;
+		};
+		EE4FE186265418F100261CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE4FE162265418EE00261CEA /* SimulatorConnectSwiftDemo */;
+			targetProxy = EE4FE185265418F100261CEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE4FE16C265418EE00261CEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE4FE16D265418EE00261CEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE4FE171265418F100261CEA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE4FE172265418F100261CEA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE4FE18B265418F100261CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE4FE18C265418F100261CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE4FE18E265418F100261CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33D93609BCF59AEC49E98A9 /* Pods-SimulatorConnectSwiftDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectSwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectSwiftDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE4FE18F265418F100261CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04F94638DB7F7261C30AAF36 /* Pods-SimulatorConnectSwiftDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectSwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectSwiftDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE4FE191265418F100261CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectSwiftDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectSwiftDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimulatorConnectSwiftDemo.app/SimulatorConnectSwiftDemo";
+			};
+			name = Debug;
+		};
+		EE4FE192265418F100261CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectSwiftDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectSwiftDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimulatorConnectSwiftDemo.app/SimulatorConnectSwiftDemo";
+			};
+			name = Release;
+		};
+		EE4FE194265418F100261CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectSwiftDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectSwiftDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimulatorConnectSwiftDemo;
+			};
+			name = Debug;
+		};
+		EE4FE195265418F100261CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectSwiftDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectSwiftDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimulatorConnectSwiftDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE4FE15E265418EE00261CEA /* Build configuration list for PBXProject "SimulatorConnectSwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4FE18B265418F100261CEA /* Debug */,
+				EE4FE18C265418F100261CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE4FE18D265418F100261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectSwiftDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4FE18E265418F100261CEA /* Debug */,
+				EE4FE18F265418F100261CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE4FE190265418F100261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectSwiftDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4FE191265418F100261CEA /* Debug */,
+				EE4FE192265418F100261CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE4FE193265418F100261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectSwiftDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4FE194265418F100261CEA /* Debug */,
+				EE4FE195265418F100261CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE4FE15B265418EE00261CEA /* Project object */;
+}

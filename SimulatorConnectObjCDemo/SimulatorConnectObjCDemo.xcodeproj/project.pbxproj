@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC975CEDCE05A5179FF171F7 /* Pods_SimulatorConnectObjCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F347B210EF8C99DA5AE531A /* Pods_SimulatorConnectObjCDemo.framework */; };
+		EE4FE1AB26543FC700261CEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1AA26543FC700261CEA /* AppDelegate.m */; };
+		EE4FE1AE26543FC700261CEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1AD26543FC700261CEA /* SceneDelegate.m */; };
+		EE4FE1B126543FC700261CEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1B026543FC700261CEA /* ViewController.m */; };
+		EE4FE1B626543FCB00261CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE1B526543FCB00261CEA /* Assets.xcassets */; };
+		EE4FE1B926543FCB00261CEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE1B726543FCB00261CEA /* LaunchScreen.storyboard */; };
+		EE4FE1BC26543FCB00261CEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1BB26543FCB00261CEA /* main.m */; };
+		EE4FE1C626543FCB00261CEA /* SimulatorConnectObjCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1C526543FCB00261CEA /* SimulatorConnectObjCDemoTests.m */; };
+		EE4FE1D126543FCB00261CEA /* SimulatorConnectObjCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1D026543FCB00261CEA /* SimulatorConnectObjCDemoUITests.m */; };
+		EE4FE1E52654421E00261CEA /* AuthenticationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1E42654421E00261CEA /* AuthenticationPresenter.m */; };
+		EE4FE1E826544C8600261CEA /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4FE1E726544C8600261CEA /* AuthenticationServices.framework */; };
+		EE7E1171265D8914009A4EE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4FE1B226543FC700261CEA /* Main.storyboard */; };
+		EE7E1172265D8BC7009A4EE5 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7E1168265D7E64009A4EE5 /* NavigationViewController.m */; };
+		EE7E1173265D8BCA009A4EE5 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7E116B265D7E83009A4EE5 /* DeviceTableViewController.m */; };
+		EE7E1176265D932C009A4EE5 /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7E1175265D932C009A4EE5 /* AppData.m */; };
+		EE7E1245265ED9FD009A4EE5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE7E1244265ED9FD009A4EE5 /* awsconfiguration.json */; };
+		EE905D6B2666A7E500143D09 /* SimulatorConnect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE905D6A2666A7E500143D09 /* SimulatorConnect.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE4FE1C226543FCB00261CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4FE19E26543FC700261CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4FE1A526543FC700261CEA;
+			remoteInfo = SimulatorConnectObjCDemo;
+		};
+		EE4FE1CD26543FCB00261CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE4FE19E26543FC700261CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4FE1A526543FC700261CEA;
+			remoteInfo = SimulatorConnectObjCDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EE7E116F265D8022009A4EE5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5F347B210EF8C99DA5AE531A /* Pods_SimulatorConnectObjCDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimulatorConnectObjCDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99386E1E92619AAC47FF48F /* Pods-SimulatorConnectObjCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorConnectObjCDemo.release.xcconfig"; path = "Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E64B34171F64CA591DC1EA83 /* Pods-SimulatorConnectObjCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorConnectObjCDemo.debug.xcconfig"; path = "Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		EE4FE1A626543FC700261CEA /* SimulatorConnectObjCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimulatorConnectObjCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4FE1A926543FC700261CEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EE4FE1AA26543FC700261CEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EE4FE1AC26543FC700261CEA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		EE4FE1AD26543FC700261CEA /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		EE4FE1AF26543FC700261CEA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EE4FE1B026543FC700261CEA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EE4FE1B326543FC700261CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE4FE1B526543FCB00261CEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE4FE1B826543FCB00261CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE4FE1BA26543FCB00261CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4FE1BB26543FCB00261CEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EE4FE1C126543FCB00261CEA /* SimulatorConnectObjCDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimulatorConnectObjCDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4FE1C526543FCB00261CEA /* SimulatorConnectObjCDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimulatorConnectObjCDemoTests.m; sourceTree = "<group>"; };
+		EE4FE1C726543FCB00261CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4FE1CC26543FCB00261CEA /* SimulatorConnectObjCDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimulatorConnectObjCDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4FE1D026543FCB00261CEA /* SimulatorConnectObjCDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimulatorConnectObjCDemoUITests.m; sourceTree = "<group>"; };
+		EE4FE1D226543FCB00261CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4FE1E42654421E00261CEA /* AuthenticationPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticationPresenter.m; sourceTree = "<group>"; };
+		EE4FE1E6265442A400261CEA /* AuthenticationPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationPresenter.h; sourceTree = "<group>"; };
+		EE4FE1E726544C8600261CEA /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		EE7E1167265D7E64009A4EE5 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		EE7E1168265D7E64009A4EE5 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		EE7E116A265D7E83009A4EE5 /* DeviceTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewController.h; sourceTree = "<group>"; };
+		EE7E116B265D7E83009A4EE5 /* DeviceTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewController.m; sourceTree = "<group>"; };
+		EE7E1174265D932C009A4EE5 /* AppData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
+		EE7E1175265D932C009A4EE5 /* AppData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
+		EE7E1244265ED9FD009A4EE5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		EE905D6A2666A7E500143D09 /* SimulatorConnect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SimulatorConnect.xcframework; path = ../lib/SimulatorConnect.xcframework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE4FE1A326543FC700261CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE905D6B2666A7E500143D09 /* SimulatorConnect.xcframework in Frameworks */,
+				EE4FE1E826544C8600261CEA /* AuthenticationServices.framework in Frameworks */,
+				CC975CEDCE05A5179FF171F7 /* Pods_SimulatorConnectObjCDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE1BE26543FCB00261CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE1C926543FCB00261CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13E54E51B335AAC9B54BF979 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E64B34171F64CA591DC1EA83 /* Pods-SimulatorConnectObjCDemo.debug.xcconfig */,
+				A99386E1E92619AAC47FF48F /* Pods-SimulatorConnectObjCDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE4FE19D26543FC700261CEA = {
+			isa = PBXGroup;
+			children = (
+				EE7E1244265ED9FD009A4EE5 /* awsconfiguration.json */,
+				EE4FE1A826543FC700261CEA /* SimulatorConnectObjCDemo */,
+				EE4FE1C426543FCB00261CEA /* SimulatorConnectObjCDemoTests */,
+				EE4FE1CF26543FCB00261CEA /* SimulatorConnectObjCDemoUITests */,
+				EE4FE1A726543FC700261CEA /* Products */,
+				EE4FE1DE265440A900261CEA /* Frameworks */,
+				13E54E51B335AAC9B54BF979 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EE4FE1A726543FC700261CEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE1A626543FC700261CEA /* SimulatorConnectObjCDemo.app */,
+				EE4FE1C126543FCB00261CEA /* SimulatorConnectObjCDemoTests.xctest */,
+				EE4FE1CC26543FCB00261CEA /* SimulatorConnectObjCDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE4FE1A826543FC700261CEA /* SimulatorConnectObjCDemo */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE1E32654420400261CEA /* Authentication */,
+				EE4FE1A926543FC700261CEA /* AppDelegate.h */,
+				EE4FE1AA26543FC700261CEA /* AppDelegate.m */,
+				EE4FE1AC26543FC700261CEA /* SceneDelegate.h */,
+				EE4FE1AD26543FC700261CEA /* SceneDelegate.m */,
+				EE4FE1AF26543FC700261CEA /* ViewController.h */,
+				EE4FE1B026543FC700261CEA /* ViewController.m */,
+				EE4FE1B226543FC700261CEA /* Main.storyboard */,
+				EE4FE1B526543FCB00261CEA /* Assets.xcassets */,
+				EE4FE1B726543FCB00261CEA /* LaunchScreen.storyboard */,
+				EE4FE1BA26543FCB00261CEA /* Info.plist */,
+				EE4FE1BB26543FCB00261CEA /* main.m */,
+				EE7E1167265D7E64009A4EE5 /* NavigationViewController.h */,
+				EE7E1168265D7E64009A4EE5 /* NavigationViewController.m */,
+				EE7E116A265D7E83009A4EE5 /* DeviceTableViewController.h */,
+				EE7E116B265D7E83009A4EE5 /* DeviceTableViewController.m */,
+				EE7E1174265D932C009A4EE5 /* AppData.h */,
+				EE7E1175265D932C009A4EE5 /* AppData.m */,
+			);
+			path = SimulatorConnectObjCDemo;
+			sourceTree = "<group>";
+		};
+		EE4FE1C426543FCB00261CEA /* SimulatorConnectObjCDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE1C526543FCB00261CEA /* SimulatorConnectObjCDemoTests.m */,
+				EE4FE1C726543FCB00261CEA /* Info.plist */,
+			);
+			path = SimulatorConnectObjCDemoTests;
+			sourceTree = "<group>";
+		};
+		EE4FE1CF26543FCB00261CEA /* SimulatorConnectObjCDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE1D026543FCB00261CEA /* SimulatorConnectObjCDemoUITests.m */,
+				EE4FE1D226543FCB00261CEA /* Info.plist */,
+			);
+			path = SimulatorConnectObjCDemoUITests;
+			sourceTree = "<group>";
+		};
+		EE4FE1DE265440A900261CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE905D6A2666A7E500143D09 /* SimulatorConnect.xcframework */,
+				EE4FE1E726544C8600261CEA /* AuthenticationServices.framework */,
+				5F347B210EF8C99DA5AE531A /* Pods_SimulatorConnectObjCDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE4FE1E32654420400261CEA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EE4FE1E42654421E00261CEA /* AuthenticationPresenter.m */,
+				EE4FE1E6265442A400261CEA /* AuthenticationPresenter.h */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE4FE1A526543FC700261CEA /* SimulatorConnectObjCDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE4FE1D526543FCB00261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectObjCDemo" */;
+			buildPhases = (
+				453F1C4DDE12057794C789F2 /* [CP] Check Pods Manifest.lock */,
+				EE4FE1A226543FC700261CEA /* Sources */,
+				EE4FE1A326543FC700261CEA /* Frameworks */,
+				EE4FE1A426543FC700261CEA /* Resources */,
+				EE7E116F265D8022009A4EE5 /* Embed Frameworks */,
+				1592D039E627CCEFDF4F3F18 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimulatorConnectObjCDemo;
+			productName = SimulatorConnectObjCDemo;
+			productReference = EE4FE1A626543FC700261CEA /* SimulatorConnectObjCDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE4FE1C026543FCB00261CEA /* SimulatorConnectObjCDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE4FE1D826543FCB00261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectObjCDemoTests" */;
+			buildPhases = (
+				EE4FE1BD26543FCB00261CEA /* Sources */,
+				EE4FE1BE26543FCB00261CEA /* Frameworks */,
+				EE4FE1BF26543FCB00261CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE4FE1C326543FCB00261CEA /* PBXTargetDependency */,
+			);
+			name = SimulatorConnectObjCDemoTests;
+			productName = SimulatorConnectObjCDemoTests;
+			productReference = EE4FE1C126543FCB00261CEA /* SimulatorConnectObjCDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EE4FE1CB26543FCB00261CEA /* SimulatorConnectObjCDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE4FE1DB26543FCB00261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectObjCDemoUITests" */;
+			buildPhases = (
+				EE4FE1C826543FCB00261CEA /* Sources */,
+				EE4FE1C926543FCB00261CEA /* Frameworks */,
+				EE4FE1CA26543FCB00261CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE4FE1CE26543FCB00261CEA /* PBXTargetDependency */,
+			);
+			name = SimulatorConnectObjCDemoUITests;
+			productName = SimulatorConnectObjCDemoUITests;
+			productReference = EE4FE1CC26543FCB00261CEA /* SimulatorConnectObjCDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE4FE19E26543FC700261CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					EE4FE1A526543FC700261CEA = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					EE4FE1C026543FCB00261CEA = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = EE4FE1A526543FC700261CEA;
+					};
+					EE4FE1CB26543FCB00261CEA = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = EE4FE1A526543FC700261CEA;
+					};
+				};
+			};
+			buildConfigurationList = EE4FE1A126543FC700261CEA /* Build configuration list for PBXProject "SimulatorConnectObjCDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE4FE19D26543FC700261CEA;
+			productRefGroup = EE4FE1A726543FC700261CEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE4FE1A526543FC700261CEA /* SimulatorConnectObjCDemo */,
+				EE4FE1C026543FCB00261CEA /* SimulatorConnectObjCDemoTests */,
+				EE4FE1CB26543FCB00261CEA /* SimulatorConnectObjCDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE4FE1A426543FC700261CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE7E1245265ED9FD009A4EE5 /* awsconfiguration.json in Resources */,
+				EE7E1171265D8914009A4EE5 /* Main.storyboard in Resources */,
+				EE4FE1B926543FCB00261CEA /* LaunchScreen.storyboard in Resources */,
+				EE4FE1B626543FCB00261CEA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE1BF26543FCB00261CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE1CA26543FCB00261CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1592D039E627CCEFDF4F3F18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		453F1C4DDE12057794C789F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimulatorConnectObjCDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE4FE1A226543FC700261CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4FE1B126543FC700261CEA /* ViewController.m in Sources */,
+				EE7E1173265D8BCA009A4EE5 /* DeviceTableViewController.m in Sources */,
+				EE7E1172265D8BC7009A4EE5 /* NavigationViewController.m in Sources */,
+				EE4FE1AB26543FC700261CEA /* AppDelegate.m in Sources */,
+				EE4FE1BC26543FCB00261CEA /* main.m in Sources */,
+				EE4FE1E52654421E00261CEA /* AuthenticationPresenter.m in Sources */,
+				EE4FE1AE26543FC700261CEA /* SceneDelegate.m in Sources */,
+				EE7E1176265D932C009A4EE5 /* AppData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE1BD26543FCB00261CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4FE1C626543FCB00261CEA /* SimulatorConnectObjCDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE4FE1C826543FCB00261CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4FE1D126543FCB00261CEA /* SimulatorConnectObjCDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE4FE1C326543FCB00261CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE4FE1A526543FC700261CEA /* SimulatorConnectObjCDemo */;
+			targetProxy = EE4FE1C226543FCB00261CEA /* PBXContainerItemProxy */;
+		};
+		EE4FE1CE26543FCB00261CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE4FE1A526543FC700261CEA /* SimulatorConnectObjCDemo */;
+			targetProxy = EE4FE1CD26543FCB00261CEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE4FE1B226543FC700261CEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE4FE1B326543FC700261CEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE4FE1B726543FCB00261CEA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE4FE1B826543FCB00261CEA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE4FE1D326543FCB00261CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EE4FE1D426543FCB00261CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE4FE1D626543FCB00261CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E64B34171F64CA591DC1EA83 /* Pods-SimulatorConnectObjCDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectObjCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectObjCDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE4FE1D726543FCB00261CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A99386E1E92619AAC47FF48F /* Pods-SimulatorConnectObjCDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectObjCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectObjCDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE4FE1D926543FCB00261CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectObjCDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectObjCDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimulatorConnectObjCDemo.app/SimulatorConnectObjCDemo";
+			};
+			name = Debug;
+		};
+		EE4FE1DA26543FCB00261CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectObjCDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectObjCDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimulatorConnectObjCDemo.app/SimulatorConnectObjCDemo";
+			};
+			name = Release;
+		};
+		EE4FE1DC26543FCB00261CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectObjCDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectObjCDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimulatorConnectObjCDemo;
+			};
+			name = Debug;
+		};
+		EE4FE1DD26543FCB00261CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSZ38AZEKN;
+				INFOPLIST_FILE = SimulatorConnectObjCDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectObjCDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimulatorConnectObjCDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE4FE1A126543FC700261CEA /* Build configuration list for PBXProject "SimulatorConnectObjCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4FE1D326543FCB00261CEA /* Debug */,
+				EE4FE1D426543FCB00261CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE4FE1D526543FCB00261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectObjCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4FE1D626543FCB00261CEA /* Debug */,
+				EE4FE1D726543FCB00261CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE4FE1D826543FCB00261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectObjCDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4FE1D926543FCB00261CEA /* Debug */,
+				EE4FE1DA26543FCB00261CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE4FE1DB26543FCB00261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectObjCDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4FE1DC26543FCB00261CEA /* Debug */,
+				EE4FE1DD26543FCB00261CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE4FE19E26543FC700261CEA /* Project object */;
+}

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15475BF3AADA92828ED7BE71 /* Pods_SimulatorConnectSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4AF13459490161376FE1FFD /* Pods_SimulatorConnectSwiftDemo.framework */; };
+		EE0B4C6F2666C862000E0D83 /* SimulatorConnect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE905D682666A7AC00143D09 /* SimulatorConnect.xcframework */; };
+		EE0B4C702666C862000E0D83 /* SimulatorConnect.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE905D682666A7AC00143D09 /* SimulatorConnect.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE4FE167265418EE00261CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE166265418EE00261CEA /* AppDelegate.swift */; };
 		EE4FE169265418EE00261CEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE168265418EE00261CEA /* SceneDelegate.swift */; };
 		EE4FE16B265418EE00261CEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE16A265418EE00261CEA /* ViewController.swift */; };
@@ -21,7 +23,6 @@
 		EE7E11622656FDD9009A4EE5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E11612656FDD9009A4EE5 /* NavigationViewController.swift */; };
 		EE7E1166265D74FB009A4EE5 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E1165265D74FB009A4EE5 /* AppData.swift */; };
 		EE7E1243265ED94D009A4EE5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE7E1242265ED94D009A4EE5 /* awsconfiguration.json */; };
-		EE905D692666A7AC00143D09 /* SimulatorConnect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE905D682666A7AC00143D09 /* SimulatorConnect.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EE0B4C702666C862000E0D83 /* SimulatorConnect.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,7 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15475BF3AADA92828ED7BE71 /* Pods_SimulatorConnectSwiftDemo.framework in Frameworks */,
-				EE905D692666A7AC00143D09 /* SimulatorConnect.xcframework in Frameworks */,
+				EE0B4C6F2666C862000E0D83 /* SimulatorConnect.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

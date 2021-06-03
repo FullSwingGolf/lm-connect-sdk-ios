@@ -23,7 +23,8 @@
 		EE7E1173265D8BCA009A4EE5 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7E116B265D7E83009A4EE5 /* DeviceTableViewController.m */; };
 		EE7E1176265D932C009A4EE5 /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7E1175265D932C009A4EE5 /* AppData.m */; };
 		EE7E1245265ED9FD009A4EE5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE7E1244265ED9FD009A4EE5 /* awsconfiguration.json */; };
-		EE905D6B2666A7E500143D09 /* SimulatorConnect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE905D6A2666A7E500143D09 /* SimulatorConnect.xcframework */; };
+		EEBB44F026691F1E00BE61BA /* SimulatorConnect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBB44EE26691EDF00BE61BA /* SimulatorConnect.xcframework */; };
+		EEBB44F126691F1E00BE61BA /* SimulatorConnect.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEBB44EE26691EDF00BE61BA /* SimulatorConnect.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EEBB44F126691F1E00BE61BA /* SimulatorConnect.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,7 +90,7 @@
 		EE7E1174265D932C009A4EE5 /* AppData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
 		EE7E1175265D932C009A4EE5 /* AppData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
 		EE7E1244265ED9FD009A4EE5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
-		EE905D6A2666A7E500143D09 /* SimulatorConnect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SimulatorConnect.xcframework; path = ../lib/SimulatorConnect.xcframework; sourceTree = "<group>"; };
+		EEBB44EE26691EDF00BE61BA /* SimulatorConnect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SimulatorConnect.xcframework; path = ../lib/SimulatorConnect.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE905D6B2666A7E500143D09 /* SimulatorConnect.xcframework in Frameworks */,
+				EEBB44F026691F1E00BE61BA /* SimulatorConnect.xcframework in Frameworks */,
 				EE4FE1E826544C8600261CEA /* AuthenticationServices.framework in Frameworks */,
 				CC975CEDCE05A5179FF171F7 /* Pods_SimulatorConnectObjCDemo.framework in Frameworks */,
 			);
@@ -197,7 +199,7 @@
 		EE4FE1DE265440A900261CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE905D6A2666A7E500143D09 /* SimulatorConnect.xcframework */,
+				EEBB44EE26691EDF00BE61BA /* SimulatorConnect.xcframework */,
 				EE4FE1E726544C8600261CEA /* AuthenticationServices.framework */,
 				5F347B210EF8C99DA5AE531A /* Pods_SimulatorConnectObjCDemo.framework */,
 			);

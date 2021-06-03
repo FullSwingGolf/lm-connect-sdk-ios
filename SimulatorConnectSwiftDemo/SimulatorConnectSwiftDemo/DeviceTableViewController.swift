@@ -22,7 +22,12 @@ class DeviceTableViewController: UITableViewController
         auth = AuthenticationPresenter.shared
         connect = FSGConnect.shared
         data = AppData.shared
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        data.devices = []
+        self.tableView.reloadData()
         
         // Uncomment the following to show the web login and allow users to sign in
 //        auth.showSignIn(completion: { code, error in

@@ -26,6 +26,12 @@
     // Get the shared instances for FSGConnect and our app data.
     _connect = FSGConnect.shared;
     _appData = AppData.sharedManager;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    _appData.devices = [[NSArray alloc] init];
+    [[self tableView] reloadData];
     
     // Uncomment the following to show the web login and allow users to sign in
     //presenter = [[AuthenticationPresenter alloc] init];

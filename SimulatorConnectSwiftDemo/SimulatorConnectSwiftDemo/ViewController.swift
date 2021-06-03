@@ -298,12 +298,16 @@ extension ViewController: LMDeviceDelegate
         case .disconnected:
             self.deviceDisconnection(disconnected: true, error: nil)
         case .notReady:
+            statusLabel.text = "NotReady"
             break
         case .waitingForArm:
+            statusLabel.text = "WaitingForArm"
             break
         case .readyBallFound:
+            statusLabel.text = "ReadyBallFound"
             break
         case .tracking:
+            statusLabel.text = "Tracking"
             break
         @unknown default:
             break

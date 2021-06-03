@@ -274,6 +274,18 @@
             
             [[self navigationController] popViewControllerAnimated:true];
             break;
+        case LMStateNotReady:
+            [self->_statusLabel setText:@"NotReady"];
+            break;
+        case LMStateWaitingForArm:
+            [self->_statusLabel setText:@"WaitingForArm"];
+            break;
+        case LMStateReadyBallFound:
+            [self->_statusLabel setText:@"ReadyBallFound"];
+            break;
+        case LMStateTracking:
+            [self->_statusLabel setText:@"Tracking"];
+            break;
         default:
             break;
     }

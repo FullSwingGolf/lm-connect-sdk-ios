@@ -15,7 +15,7 @@ class AuthenticationPresenter : NSObject {
     // MARK: Constants
     static let authUrl = "https://fsg-api.auth.us-east-1.amazoncognito.com/login"
     static let scope = "openid"
-    static let responseType = "code"
+    static let responseType = "token"
     static let redirectURLEndpoint = "oauth2redirect"
     static let callbackURLScheme = "simulatorconnect"
     static let clientID = "7ni0kpg1n7esk9l3cnldktt0d1"

@@ -32,7 +32,7 @@ class DeviceTableViewController: UITableViewController
         // Uncomment the following to show the web login and allow users to sign in
 //        auth.showSignIn(completion: { code, error in
 //            self.data.authCode = code
-//            self.connect.initialize(accessToken: code)
+//            self.connect.initialize(accessToken: code!)
 //            do {
 //                try self.connect.findDevicesAsync(completion: self.findDevicesComplete(devices:error:))
 //            } catch {}

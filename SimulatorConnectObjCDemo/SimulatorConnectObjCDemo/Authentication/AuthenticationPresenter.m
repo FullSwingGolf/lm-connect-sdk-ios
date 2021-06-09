@@ -19,7 +19,7 @@
 
 static NSString *authUrl = @"https://fsg-api.auth.us-east-1.amazoncognito.com/login";
 static NSString *scope = @"openid";
-static NSString *responseType = @"code";
+static NSString *responseType = @"token";
 static NSString *redirectURLEndpoint = @"oauth2redirect";
 static NSString *callbackURLScheme = @"simulatorconnect";
 static NSString *clientID = @"7ni0kpg1n7esk9l3cnldktt0d1";

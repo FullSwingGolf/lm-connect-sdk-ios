@@ -286,8 +286,12 @@ case wedge64
 public var description: String
 ```
 
+String description of enum value.
+
 ### `abbreviation`
 
 ```swift
 public var abbreviation: String
 ```
+
+String abbreviation of enum value

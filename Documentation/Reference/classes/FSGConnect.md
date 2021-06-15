@@ -6,8 +6,7 @@
 public class FSGConnect: NSObject
 ```
 
-This class provides a means find Launch Monitors and connect to them to receive
-shot data
+This class provides a means to find Launch Monitors and connect to them to receive shot data
 
 ## Properties
 ### `authorization`
@@ -84,7 +83,15 @@ public func findDevicesAsync(completion: @escaping(([LMDevice]?, Error?) -> Void
 
 Find all devices that are accessible by the SDK.
 
+   [_connect findDevicesAsyncAndReturnError:&error completion:^(NSArray<id<LMDevice>> * devices, NSError * error) {
+       [self findDevicesComplete:devices error:error];
+   }];
+
+- note: This operation will run for 15 seconds.  Callback will be called each time a new device is found.
+
 - Parameter completion: Callback delegate containing a list of all found devices or an error.
+  - [LmDevice]?: List of devices found
+  - Error?: Any error that occurred during scan
 
 #### Parameters
 

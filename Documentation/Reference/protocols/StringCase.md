@@ -6,6 +6,8 @@
 public protocol StringCase : CaseIterable
 ```
 
+Convenience protocol for Swift enumerations
+
 ## Properties
 ### `description`
 

@@ -8,6 +8,8 @@ public protocol LMShot
 
 A golf shot and all calculated values.
 
+SDK will provide a concrete type in callbacks.
+
 ## Properties
 ### `id`
 
@@ -23,7 +25,7 @@ The unique shot identifier
 var deviceId: String
 ```
 
-The device identifier the shot origintated from
+The device identifier the shot originated from
 
 ### `timeStamp`
 
@@ -41,6 +43,8 @@ var attackAngle: NSNumber?
 
 The attack angle in degrees
 
+Available at launch
+
 ### `ballSpeed`
 
 ```swift
@@ -48,6 +52,8 @@ var ballSpeed: NSNumber?
 ```
 
 The ball speed in mph
+
+Available at launch
 
 ### `clubPath`
 
@@ -57,13 +63,17 @@ var clubPath: NSNumber?
 
 The club path in degrees
 
+Available at launch
+
 ### `clubSpeed`
 
 ```swift
 var clubSpeed: NSNumber?
 ```
 
-The club speed in mph
+ The club speed in mph
+
+Available at launch
 
 ### `faceAngle`
 
@@ -73,6 +83,8 @@ var faceAngle: NSNumber?
 
 The face angle in degrees
 
+Available at launch
+
 ### `horizLaunchAngle`
 
 ```swift
@@ -80,6 +92,8 @@ var horizLaunchAngle: NSNumber?
 ```
 
 The horizontal launch angle in degrees (negative is left, positive is right)
+
+Available at launch
 
 ### `smashFactor`
 
@@ -89,6 +103,8 @@ var smashFactor: NSNumber?
 
 The smash factor
 
+Available at launch
+
 ### `spinAxis`
 
 ```swift
@@ -96,6 +112,8 @@ var spinAxis: NSNumber?
 ```
 
 The spin axis in degrees
+
+Available at launch
 
 ### `spinRate`
 
@@ -105,6 +123,8 @@ var spinRate: NSNumber?
 
 The spin rate in rpm
 
+Available at launch
+
 ### `vertlaunchAngle`
 
 ```swift
@@ -112,6 +132,8 @@ var vertlaunchAngle: NSNumber?
 ```
 
 The vertical launch angle in degrees
+
+Available at launch
 
 ### `apex`
 
@@ -121,6 +143,8 @@ var apex: NSNumber?
 
 The apex in yards
 
+Available after flight
+
 ### `carryDistance`
 
 ```swift
@@ -128,6 +152,8 @@ var carryDistance: NSNumber?
 ```
 
 The carry distance in yards
+
+Available after flight
 
 ### `totalDistance`
 
@@ -137,6 +163,8 @@ var totalDistance: NSNumber?
 
 The total distance in yards
 
+Available after flight
+
 ### `side`
 
 ```swift
@@ -145,6 +173,8 @@ var side: NSNumber?
 
 The side in yards (negative is left, positive is right)
 
+Available after flight
+
 ### `sideTotal`
 
 ```swift
@@ -152,3 +182,5 @@ var sideTotal: NSNumber?
 ```
 
 The side total in yards (negative is left, positive is right)
+
+Available after flight

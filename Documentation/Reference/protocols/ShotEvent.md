@@ -6,6 +6,12 @@
 public protocol ShotEvent
 ```
 
+Data object sent in LMDeviceDelegate shotEvent callback
+
+Contains all shot data received from LM during ball in flight.
+
+SDK will provide a concrete type in callbacks.
+
 ## Properties
 ### `type`
 
@@ -13,7 +19,7 @@ public protocol ShotEvent
 var type: LMShotType
 ```
 
-The shot type
+The shot type (LmShotType)[protocols/LmShotType.md]
 
 ### `shot`
 
@@ -21,4 +27,4 @@ The shot type
 var shot: LMShot?
 ```
 
-The shot data
+The shot data (LmShot)[protocols/LmShot.md]

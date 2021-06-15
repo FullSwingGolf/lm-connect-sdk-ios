@@ -6,7 +6,9 @@
 public enum LMShotType: Int, Codable
 ```
 
-The type of shot data. Launch data is available after impact and flight data is available after the full flight of the ball has completed.
+The type of shot data.
+
+Launch data is available after impact and flight data is available after the full flight of the ball has completed.
 
 ## Cases
 ### `launch`

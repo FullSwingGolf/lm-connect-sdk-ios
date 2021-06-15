@@ -8,6 +8,8 @@ public protocol LMDevice
 
 The interface to a Launch Monitor
 
+SDK will provide a concrete type in callbacks.
+
 ## Properties
 ### `id`
 
@@ -15,11 +17,19 @@ The interface to a Launch Monitor
 var id: String
 ```
 
+Unique ID for the Device.
+
+Currently using the CBPeripheral UUID from iOS
+
 ### `name`
 
 ```swift
 var name: String
 ```
+
+Human friendly name for the Launch Monitor
+
+Uses the BLE advertised name
 
 ### `state`
 
@@ -27,11 +37,15 @@ var name: String
 var state: LMState
 ```
 
+Current state of the LM
+
 ### `delegate`
 
 ```swift
 weak var delegate: LMDeviceDelegate?
 ```
+
+Delegate object for state and shot data events
 
 ## Methods
 ### `connect(completion:)`
@@ -89,6 +103,13 @@ func setConfiguration(id: LMConfigurationId, value: Data, completion: @escaping(
 ```
 
 Set Configuration
+
+   LMClubType clubType = LMClubTypeDriver;
+   unsigned char bytes[] = {clubType};
+   NSData *data = [NSData dataWithBytes:bytes length:1];
+   [device setConfigurationWithId:LMConfigurationIdClub value:data completion:^(BOOL, NSError * _Nullable) {
+       NSLog(@"Club Updated");
+   }];
 
 - Parameter id: LMConfigurationId determing what configuration to set
 - Parameter value: Value to set configuration Id

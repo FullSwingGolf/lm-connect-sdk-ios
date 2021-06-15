@@ -15,6 +15,8 @@ Configuration IDs
 case autoArm = 0
 ```
 
+- Not Implemented
+
 ### `club`
 
 ```swift

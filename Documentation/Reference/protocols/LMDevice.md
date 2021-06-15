@@ -104,12 +104,14 @@ func setConfiguration(id: LMConfigurationId, value: Data, completion: @escaping(
 
 Set Configuration
 
-   LMClubType clubType = LMClubTypeDriver;
-   unsigned char bytes[] = {clubType};
-   NSData *data = [NSData dataWithBytes:bytes length:1];
-   [device setConfigurationWithId:LMConfigurationIdClub value:data completion:^(BOOL, NSError * _Nullable) {
-       NSLog(@"Club Updated");
-   }];
+```objc
+    LMClubType clubType = LMClubTypeDriver;
+    unsigned char bytes[] = {clubType};
+    NSData *data = [NSData dataWithBytes:bytes length:1];
+    [device setConfigurationWithId:LMConfigurationIdClub value:data completion:^(BOOL, NSError * _Nullable) {
+        NSLog(@"Club Updated");
+    }];
+```
 
 - Parameter id: LMConfigurationId determing what configuration to set
 - Parameter value: Value to set configuration Id

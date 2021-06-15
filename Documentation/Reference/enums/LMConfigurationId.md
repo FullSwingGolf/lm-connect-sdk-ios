@@ -15,7 +15,7 @@ Configuration IDs
 case autoArm = 0
 ```
 
-- Not Implemented
+- Auto Arm is not currently implemented on the LM
 
 ### `club`
 

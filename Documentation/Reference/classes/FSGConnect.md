@@ -78,37 +78,43 @@ This function should be called when the SDK is not longer in use to clean up res
 ### `findDevicesAsync(completion:)`
 
 ```swift
-public func findDevicesAsync(completion: @escaping(([LMDevice]?, Error?) -> Void)) throws -> Void
+public func findDevicesAsync(completion: @escaping((_ devices: [LMDevice]?, _ error: Error?) -> Void)) throws -> Void
 ```
 
 Find all devices that are accessible by the SDK.
 
-   [_connect findDevicesAsyncAndReturnError:&error completion:^(NSArray<id<LMDevice>> * devices, NSError * error) {
-       [self findDevicesComplete:devices error:error];
-   }];
+```objc
+    [_connect findDevicesAsyncAndReturnError:&error completion:^(NSArray<id<LMDevice>> * devices, NSError * error) {
+        [self findDevicesComplete:devices error:error];
+    }];
+```
 
 - note: This operation will run for 15 seconds.  Callback will be called each time a new device is found.
 
 - Parameter completion: Callback delegate containing a list of all found devices or an error.
-  - [LmDevice]?: List of devices found
-  - Error?: Any error that occurred during scan
+- Parameter devices: List of devices found
+- Parameter error: Any error that occurred during scan
 
 #### Parameters
 
 | Name | Description |
 | ---- | ----------- |
 | completion | Callback delegate containing a list of all found devices or an error. |
+| devices | List of devices found |
+| error | Any error that occurred during scan |
 
 ### `findDeviceAsync(identifier:completion:)`
 
 ```swift
-public func findDeviceAsync(identifier: String, completion: @escaping(([LMDevice]?, Error?) -> Void)) throws -> Void
+public func findDeviceAsync(identifier: String, completion: @escaping((_ devices: [LMDevice]?, _ error: Error?) -> Void)) throws -> Void
 ```
 
 Finds a known device.
 
 - Parameter identifier: String LM identifier.
 - Parameter completion: Callback delegate containing a list of all found devices or an error.
+- Parameter devices: List of devices found
+- Parameter error: Any error that occurred during scan
 
 #### Parameters
 
@@ -116,3 +122,5 @@ Finds a known device.
 | ---- | ----------- |
 | identifier | String LM identifier. |
 | completion | Callback delegate containing a list of all found devices or an error. |
+| devices | List of devices found |
+| error | Any error that occurred during scan |

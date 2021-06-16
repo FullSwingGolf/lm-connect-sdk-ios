@@ -31,10 +31,3 @@ The current claims the SDK is authorized for. Claims are key/value pairs such as
 "AllowedCourses" : [ "WolfCreek" ]
 "AllowedDevices" : [ "FSG112233445566", "FSG223344556677" ]
 ```
-
-## Methods
-### `init(authorized:claims:)`
-
-```swift
-public init(authorized: Bool, claims: [String: NSObject])
-```

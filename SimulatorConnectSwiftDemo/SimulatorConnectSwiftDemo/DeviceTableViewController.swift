@@ -74,7 +74,7 @@ class DeviceTableViewController: UITableViewController
 
         // Configure the cell...
         let device = data.devices[indexPath.row]
-        cell.textLabel?.text = "Device \(device.name) UUID: \(device.id)"
+        cell.textLabel?.text = device.name
 
         return cell
     }

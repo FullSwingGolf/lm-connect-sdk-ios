@@ -9,8 +9,11 @@ The SDK requires the use of AWSMobileClient SDK.  This is available through the 
 https://github.com/aws-amplify/aws-sdk-ios
 
 See installation instructions for:
+
 Cocoapods: https://github.com/aws-amplify/aws-sdk-ios#cocoapods
+
 Carthage: https://github.com/aws-amplify/aws-sdk-ios#carthage
+
 Framework: https://github.com/aws-amplify/aws-sdk-ios#frameworks
 
 ## Authentication

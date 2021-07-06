@@ -24,6 +24,10 @@ Please refer to the reference documentation for details on the SDK interfaces.  
 
 https://github.com/FullSwingGolf/lm-connect-sdk-ios/tree/main/Documentation/Reference
 
+### SDK API Flow
+
+![](https://api.media.atlassian.com/file/cd63a690-f95c-481d-939b-6dcdb1a51e2b/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIwMDE4NTMyNy1mMDg4LTRlZDQtYWUxMy02ODIwODc4NzJiNzUiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmNkNjNhNjkwLWY5NWMtNDgxZC05MzliLTZkY2RiMWE1MWUyYiI6WyJyZWFkIl19LCJleHAiOjE2MjU2ODkyODUsIm5iZiI6MTYyNTYwNjMwNX0.oBUUnXNrBb9JWwF1wyT2-ku66aypnNFjQn6OxqGmaS8&client=00185327-f088-4ed4-ae13-682087872b75&name=LMKit_iOS_SDK.png)
+
 ### Quick Start
 The core classes of the SDK are the FSGConnect and the LMDevice classes.  You will use a single instance of FSGConnect to initialize the SDK, and discover devices.  From there, you will use an instance of LMDevice to connect and send/recieve data from a Kit device.
 

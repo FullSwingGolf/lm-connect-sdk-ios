@@ -16,6 +16,12 @@ Carthage: https://github.com/aws-amplify/aws-sdk-ios#carthage
 
 Framework: https://github.com/aws-amplify/aws-sdk-ios#frameworks
 
+### Gotchas
+
+* If using cocoapods, be sure to set "Build Libraries for Distribution" to "Yes" for the AWSMobileClient target of the pods project.  Otherwise you may experience an EXC_BAD_ACCESS error when retrieving JWT tokens.
+
+* Add the awsconfiguration.json file to your application project.  It should be included in the Copy Bundle Resources Build Phase of your application target as well.  Without this, the AWS SDK will not be able to connect to the correct AWS resources.  
+
 ## Authentication
 Once connected to an LM over BLE, you will need to provide authentication via an access token or app client credentials.  These can be obtained through Cognito either using the AWSMobileClient to obtain a token for an app login, or using a web interface to obtain a user token.  Both flows are shown in the demo code.
 

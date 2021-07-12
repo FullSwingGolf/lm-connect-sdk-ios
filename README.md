@@ -32,7 +32,17 @@ https://github.com/FullSwingGolf/lm-connect-sdk-ios/tree/main/Documentation/Refe
 
 ### SDK API Flow
 
-![](https://api.media.atlassian.com/file/cd63a690-f95c-481d-939b-6dcdb1a51e2b/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIwMDE4NTMyNy1mMDg4LTRlZDQtYWUxMy02ODIwODc4NzJiNzUiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmNkNjNhNjkwLWY5NWMtNDgxZC05MzliLTZkY2RiMWE1MWUyYiI6WyJyZWFkIl19LCJleHAiOjE2MjU2ODkyODUsIm5iZiI6MTYyNTYwNjMwNX0.oBUUnXNrBb9JWwF1wyT2-ku66aypnNFjQn6OxqGmaS8&client=00185327-f088-4ed4-ae13-682087872b75&name=LMKit_iOS_SDK.png)
+The general interaction flow is charted below.  This shows how a final application will interact with the SDK to communicate with a FullSwing Kit device.  Once connected, the aplicaion will recieve state transitions and shot data as it is available.  This state flow 
+
+| State | Description |
+| --- | --- |
+| disconnected | Not connected to device |
+| notReady | Device connected, no ball detected. |
+| waitingForArm | Device connected, waiting for manual arm (not currently used) |
+| readyBallFound | Device connected, ball detected.  Waiting for swing. | 
+| tracking | Currently tracking ball in flight.  Will be sent twice, first for immediate launch data, then soon after with flight data computed by radar. Will be accompanied by a shot event. | 
+
+![](https://www.dropbox.com/s/zq8c92ftgb08s98/LMKit_iOS_SDK.png?raw=1)
 
 ### Quick Start
 The core classes of the SDK are the FSGConnect and the LMDevice classes.  You will use a single instance of FSGConnect to initialize the SDK, and discover devices.  From there, you will use an instance of LMDevice to connect and send/recieve data from a Kit device.

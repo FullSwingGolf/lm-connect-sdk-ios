@@ -32,7 +32,7 @@ https://github.com/FullSwingGolf/lm-connect-sdk-ios/tree/main/Documentation/Refe
 
 ### SDK API Flow
 
-The general interaction flow is charted below.  This shows how a final application will interact with the SDK to communicate with a FullSwing Kit device.  Once connected, the aplicaion will recieve state transitions and shot data as it is available.  This state flow 
+The general interaction flow is charted below.  This shows how a final application will interact with the SDK to communicate with a FullSwing Kit device.  Once connected, the aplication will recieve state transitions and shot data as it is available.  This state flow is detailed in the following table.
 
 | State | Description |
 | --- | --- |

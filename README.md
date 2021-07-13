@@ -32,7 +32,7 @@ https://github.com/FullSwingGolf/lm-connect-sdk-ios/tree/main/Documentation/Refe
 
 ### SDK API Flow
 
-The general interaction flow is charted below.  This shows how a final application will interact with the SDK to communicate with a FullSwing Kit device.  Once connected, the aplication will recieve state transitions and shot data as it is available.  This state flow is detailed in the following table.
+The general interaction flow is charted below.  This shows how a final application will interact with the SDK to communicate with a FullSwing Kit device.  Once connected, the application will recieve state transitions and shot data as it is available.  This state flow is detailed in the following table.
 
 | State | Description |
 | --- | --- |
@@ -40,7 +40,7 @@ The general interaction flow is charted below.  This shows how a final applicati
 | notReady | Device connected, no ball detected. |
 | waitingForArm | Device connected, waiting for manual arm (not currently used) |
 | readyBallFound | Device connected, ball detected.  Waiting for swing. | 
-| tracking | Currently tracking ball in flight.  Will be sent twice, first for immediate launch data, then soon after with flight data computed by radar. Will be accompanied by a shot event. | 
+| tracking | Currently tracking ball in flight.  Will be sent twice, first for immediate launch data, then soon after with flight data computed by radar. Will be accompanied by a shot event.  The shot events will have the Shot Type set accordingly. | 
 
 ![](https://www.dropbox.com/s/zq8c92ftgb08s98/LMKit_iOS_SDK.png?raw=1)
 

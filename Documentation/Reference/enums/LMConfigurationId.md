@@ -22,3 +22,9 @@ case autoArm = 0
 ```swift
 case club
 ```
+
+### `elevation`
+
+```swift
+case elevation
+```

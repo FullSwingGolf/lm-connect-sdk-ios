@@ -26,3 +26,11 @@ func stateChangedEvent(_ event: StateChangedEvent)
 ```
 
 Called when a state change occurs for the LM or our connection to it
+
+### `batteryLevelChanged(_:)`
+
+```swift
+func batteryLevelChanged(_ level: UInt8)
+```
+
+Called when the value for battery level is updated

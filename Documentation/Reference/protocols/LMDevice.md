@@ -31,6 +31,16 @@ Human friendly name for the Launch Monitor
 
 Uses the BLE advertised name
 
+### `batterylevel`
+
+```swift
+var batterylevel: UInt8
+```
+
+Current Battery Level  for the Launch Monitor
+
+Range from 0-100
+
 ### `state`
 
 ```swift

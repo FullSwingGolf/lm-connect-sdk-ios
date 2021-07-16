@@ -291,6 +291,11 @@
     }
 }
 
+- (void)batteryLevelChanged:(UInt8)level
+{
+    NSLog(@"batterylevel %d", level);
+}
+
 #pragma mark - UIPickerViewDelegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView

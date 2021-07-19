@@ -134,12 +134,25 @@ When connecting to a device, you should immediately set your delegate to receive
 }
 ```
 
-Currently the only configuration supported for writing to the LM Kit device is club type.  Below is an example of setting the club type to Driver.  
+Currently the only configuration values supported for writing to the LM Kit device are club type and Elevation.  
+Below is an example of setting the club type to Driver.  
 ```objc
 LMClubType clubType = LMClubTypeDriver;
 unsigned char bytes[] = {clubType};
 NSData *data = [NSData dataWithBytes:bytes length:1];
 [_device setConfigurationWithId:LMConfigurationIdClub value:data completion:^(BOOL, NSError * _Nullable) {
     NSLog(@"Club Updated");
+}];
+```
+  
+Below is an example of setting the Elevation.  
+```objc
+Float elevation = 466.0;
+
+NSMutableData * data = [NSMutableData dataWithCapacity:0];
+[data appendBytes:&elevation length:sizeof(float)];
+
+[_device setConfigurationWithId:LMConfigurationIdElevation value:data completion:^(BOOL, NSError * _Nullable) {
+    NSLog(@"Elevation Updated");
 }];
 ```

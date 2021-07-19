@@ -28,3 +28,5 @@ case club
 ```swift
 case elevation
 ```
+
+- Elevation is in feet above sea level.  This is not currently implemented on the LM

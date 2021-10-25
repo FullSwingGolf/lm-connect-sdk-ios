@@ -296,6 +296,11 @@
     NSLog(@"batterylevel %d", level);
 }
 
+- (void)shortShotChanged:(BOOL)enabled
+{
+    NSLog(@"shortShot %@", enabled ? @"YES" : @"NO");
+}
+
 #pragma mark - UIPickerViewDelegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView

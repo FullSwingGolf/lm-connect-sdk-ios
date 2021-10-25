@@ -34,3 +34,11 @@ func batteryLevelChanged(_ level: UInt8)
 ```
 
 Called when the value for battery level is updated
+
+### `shortShotChanged(_:)`
+
+```swift
+func shortShotChanged(_ enabled: Bool)
+```
+
+Called when the value for short shot is updated

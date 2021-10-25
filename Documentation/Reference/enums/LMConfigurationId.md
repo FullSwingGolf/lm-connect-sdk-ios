@@ -30,3 +30,27 @@ case elevation
 ```
 
 - Elevation is in feet above sea level.  This is not currently implemented on the LM
+
+### `distanceToPin`
+
+```swift
+case distanceToPin
+```
+
+- Distance to pin is in feet
+
+### `autoShortShotEnabled`
+
+```swift
+case autoShortShotEnabled
+```
+
+-
+
+### `shortShot`
+
+```swift
+case shortShot
+```
+
+-

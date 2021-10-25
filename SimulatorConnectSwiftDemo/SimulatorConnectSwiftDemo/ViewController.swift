@@ -313,6 +313,16 @@ extension ViewController: LMDeviceDelegate
             break
         }
     }
+    
+    func batteryLevelChanged(_ level: UInt8)
+    {
+        
+    }
+    
+    func shortShotChanged(_ enabled: Bool)
+    {
+        
+    }
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate

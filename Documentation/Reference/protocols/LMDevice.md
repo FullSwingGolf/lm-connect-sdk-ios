@@ -41,6 +41,14 @@ Current Battery Level  for the Launch Monitor
 
 Range from 0-100
 
+### `shortShot`
+
+```swift
+var shortShot: Bool
+```
+
+Current Short Shot state  for the Launch Monitor
+
 ### `state`
 
 ```swift

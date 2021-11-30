@@ -29,7 +29,7 @@ case club
 case elevation
 ```
 
-- Elevation is in feet above sea level.  This is not currently implemented on the LM
+- Float Elevation is in feet above sea level.  This is not currently implemented on the LM
 
 ### `distanceToPin`
 
@@ -37,7 +37,7 @@ case elevation
 case distanceToPin
 ```
 
-- Distance to pin is in feet
+- Float Distance to pin is in yards
 
 ### `autoShortShotEnabled`
 
@@ -45,7 +45,7 @@ case distanceToPin
 case autoShortShotEnabled
 ```
 
--
+- Bool
 
 ### `shortShot`
 
@@ -53,4 +53,4 @@ case autoShortShotEnabled
 case shortShot
 ```
 
--
+- Bool

@@ -182,14 +182,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zLz-9z-W2i"/>
                                 </connections>
                             </pickerView>
-                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="4fV-e8-OWE">
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="4fV-e8-OWE">
                                 <rect key="frame" x="222" y="580" width="138" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="distanceAction" destination="BYZ-38-t0r" eventType="valueChanged" id="uPj-LZ-Vlp"/>
                                 </connections>
                             </slider>
-                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-fM-gcY" userLabel="Short Shot">
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-fM-gcY" userLabel="Short Shot">
                                 <rect key="frame" x="281" y="618" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <connections>

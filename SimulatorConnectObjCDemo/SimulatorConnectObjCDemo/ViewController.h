@@ -10,6 +10,8 @@
 @interface ViewController : UIViewController
 
 -(IBAction) clubSelectAction;
+-(IBAction) distanceAction;
+-(IBAction) shortShotAction;
 
 @property IBOutlet UILabel *deviceLabel;
 @property IBOutlet UILabel *statusLabel;
@@ -44,6 +46,13 @@
 @property IBOutlet UILabel *sideTotalLabel;
 
 @property IBOutlet UIPickerView *clubSelect;
+
+@property IBOutlet UILabel *distanceLabel;
+@property IBOutlet UILabel *distanceValueLabel;
+@property IBOutlet UISlider *distanceSelect;
+
+@property IBOutlet UILabel *shortShotLabel;
+@property IBOutlet UISwitch *shortShot;
 
 @end
 

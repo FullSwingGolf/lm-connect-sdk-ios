@@ -96,6 +96,13 @@
         [self->_clubSelectLabel setHidden:false];
         [self->_clubSelect setHidden:false];
         
+        [self->_distanceLabel setHidden:false];
+        [self->_distanceValueLabel setHidden:false];
+        [self->_distanceSelect setHidden:false];
+        
+        [self->_shortShot setHidden:false];
+        [self->_shortShotLabel setHidden:false];
+        
         [self->_carryLabel setHidden:false];
         [self->_totalLabel setHidden:false];
         [self->_spinRateLabel setHidden:false];
@@ -125,6 +132,35 @@
 {
     [_appData.device disconnectWithCompletion:^(BOOL disconnected, NSError * error) {
         NSLog(@"Disconnected: %@", self->_appData.device.name);
+    }];
+}
+
+- (void)shortShotAction
+{
+    NSLog(@"Short Shot Selected %d", _shortShot.on);
+    unsigned char bytes[] = {_shortShot.on};
+    NSData *data = [NSData dataWithBytes:bytes length:1];
+    [_appData.device setConfigurationWithId:LMConfigurationIdShortShot value:data completion:^(BOOL, NSError * _Nullable) {
+        NSLog(@"Short Shot Updated");
+    }];
+}
+
+- (void)distanceAction
+{
+    float distance = _distanceSelect.value;
+    [_distanceValueLabel setText:[NSString stringWithFormat:@"%d", (int)_distanceSelect.value]];
+    
+    NSLog(@"Distance To Pin %f", _distanceSelect.value);
+    NSMutableData *data = [NSMutableData dataWithCapacity:0];
+    [data appendBytes:&distance length:sizeof(float)];
+    [_appData.device setConfigurationWithId:LMConfigurationIdDistanceToPin value:data completion:^(BOOL, NSError * _Nullable) {
+        NSLog(@"Short Shot Updated");
+    }];
+    
+    unsigned char bytes[] = {true};
+    NSData *dataAS = [NSData dataWithBytes:bytes length:1];
+    [_appData.device setConfigurationWithId:LMConfigurationIdAutoShortShotEnabled value:dataAS completion:^(BOOL, NSError * _Nullable) {
+        NSLog(@"Short Shot Updated");
     }];
 }
 
@@ -255,6 +291,13 @@
             [self->_clubSelectLabel setHidden:true];
             [self->_clubSelect setHidden:true];
             
+            [self->_distanceLabel setHidden:true];
+            [self->_distanceValueLabel setHidden:true];
+            [self->_distanceSelect setHidden:true];
+            
+            [self->_shortShot setHidden:true];
+            [self->_shortShotLabel setHidden:true];
+            
             [self->_carryLabel setHidden:true];
             [self->_totalLabel setHidden:true];
             [self->_spinRateLabel setHidden:true];
@@ -299,6 +342,7 @@
 - (void)shortShotChanged:(BOOL)enabled
 {
     NSLog(@"shortShot %@", enabled ? @"YES" : @"NO");
+    _shortShot.on = enabled;
 }
 
 #pragma mark - UIPickerViewDelegate

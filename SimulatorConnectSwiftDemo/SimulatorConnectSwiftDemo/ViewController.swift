@@ -43,6 +43,13 @@ final class ViewController: UIViewController
     
     @IBOutlet weak var clubSelect: UIPickerView!
     
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var distanceValueLabel: UILabel!
+    @IBOutlet weak var distanceSelect: UISlider!
+    
+    @IBOutlet weak var shortShotLabel: UILabel!
+    @IBOutlet weak var shortShot: UISwitch!
+    
     private var connect: FSGConnect!
     private var data: AppData!
     
@@ -101,6 +108,32 @@ final class ViewController: UIViewController
         //self.showLiveVideo()
     }
     
+    @IBAction func distanceValueChanged(_ sender: Any)
+    {
+        self.distanceValueLabel.text = "\(Int(self.distanceSelect.value))"
+        
+        if let device = data.device {
+            device.setConfiguration(id: .autoShortShotEnabled, value: Data([0x1])) { success, error in
+                print("Auto Short Shot Updated ")
+            }
+            device.setConfiguration(id: .distanceToPin, value: Data(distanceSelect.value.bytes)) { success, error in
+                print("Distance Updated")
+            }
+        }
+    }
+    
+    @IBAction func shortShotValueChanged(_ sender: Any)
+    {
+        if let device = data.device {
+            device.setConfiguration(id: .autoShortShotEnabled, value: Data([0x0])) { success, error in
+                print("Auto Short Shot Updated ")
+            }
+            device.setConfiguration(id: .shortShot, value: Data([self.shortShot.isOn ? 0x1 : 0x0])) { success, error in
+                print("Short Shot Updated ")
+            }
+        }
+    }
+    
     private func deviceConnection(connected: Bool, error: Error?)
     {
         if connected {
@@ -114,6 +147,13 @@ final class ViewController: UIViewController
             
             self.clubSelect.isHidden = false
             self.clubSelectLabel.isHidden = false
+            
+            self.distanceLabel.isHidden = false
+            self.distanceValueLabel.isHidden = false
+            self.distanceSelect.isHidden = false
+            
+            self.shortShot.isHidden = false
+            self.shortShotLabel.isHidden = false
             
             self.carryLabel.isHidden = false
             self.totalLabel.isHidden = false
@@ -144,6 +184,13 @@ final class ViewController: UIViewController
             
             self.clubSelect.isHidden = true
             self.clubSelectLabel.isHidden = true
+            
+            self.distanceLabel.isHidden = true
+            self.distanceValueLabel.isHidden = true
+            self.distanceSelect.isHidden = true
+            
+            self.shortShot.isHidden = true
+            self.shortShotLabel.isHidden = true
             
             self.connectButton.isHidden = true
             self.disconnectButton.isHidden = true
@@ -321,7 +368,7 @@ extension ViewController: LMDeviceDelegate
     
     func shortShotChanged(_ enabled: Bool)
     {
-        
+        self.shortShot.isOn = enabled
     }
 }
 

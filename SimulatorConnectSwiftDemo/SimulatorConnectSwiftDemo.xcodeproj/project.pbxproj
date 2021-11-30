@@ -23,6 +23,7 @@
 		EE7E11622656FDD9009A4EE5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E11612656FDD9009A4EE5 /* NavigationViewController.swift */; };
 		EE7E1166265D74FB009A4EE5 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E1165265D74FB009A4EE5 /* AppData.swift */; };
 		EE7E1243265ED94D009A4EE5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE7E1242265ED94D009A4EE5 /* awsconfiguration.json */; };
+		EE89B69E2756A4C500DC01BC /* Float+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE89B69D2756A4C500DC01BC /* Float+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		EE7E11612656FDD9009A4EE5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		EE7E1165265D74FB009A4EE5 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		EE7E1242265ED94D009A4EE5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		EE89B69D2756A4C500DC01BC /* Float+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Utilities.swift"; sourceTree = "<group>"; };
 		EE905D682666A7AC00143D09 /* SimulatorConnect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SimulatorConnect.xcframework; path = ../lib/SimulatorConnect.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 				EE7E115F2656EEC7009A4EE5 /* DeviceTableViewController.swift */,
 				EE7E11612656FDD9009A4EE5 /* NavigationViewController.swift */,
 				EE7E1165265D74FB009A4EE5 /* AppData.swift */,
+				EE89B69D2756A4C500DC01BC /* Float+Utilities.swift */,
 			);
 			path = SimulatorConnectSwiftDemo;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				EE7E11602656EEC7009A4EE5 /* DeviceTableViewController.swift in Sources */,
 				EE4FE16B265418EE00261CEA /* ViewController.swift in Sources */,
 				EE4FE167265418EE00261CEA /* AppDelegate.swift in Sources */,
+				EE89B69E2756A4C500DC01BC /* Float+Utilities.swift in Sources */,
 				EE4FE169265418EE00261CEA /* SceneDelegate.swift in Sources */,
 				EE7E1166265D74FB009A4EE5 /* AppData.swift in Sources */,
 			);

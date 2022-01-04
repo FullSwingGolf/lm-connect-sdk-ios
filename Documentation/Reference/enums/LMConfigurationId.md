@@ -23,13 +23,15 @@ case autoArm = 0
 case club
 ```
 
+- LMClubType - Club current in use by golfer
+
 ### `elevation`
 
 ```swift
 case elevation
 ```
 
-- Float Elevation is in feet above sea level.  This is not currently implemented on the LM
+- Float - Elevation is in feet above sea level.  This is not currently implemented on the LM
 
 ### `distanceToPin`
 
@@ -37,7 +39,7 @@ case elevation
 case distanceToPin
 ```
 
-- Float Distance to pin is in yards
+- Float - Distance to pin is in yards
 
 ### `autoShortShotEnabled`
 
@@ -45,7 +47,7 @@ case distanceToPin
 case autoShortShotEnabled
 ```
 
-- Bool
+- Bool - Yards to the pin
 
 ### `shortShot`
 
@@ -53,4 +55,4 @@ case autoShortShotEnabled
 case shortShot
 ```
 
-- Bool
+- Bool - Whether or not short shot mode is currently active

@@ -16,6 +16,27 @@ Carthage: https://github.com/aws-amplify/aws-sdk-ios#carthage
 
 Framework: https://github.com/aws-amplify/aws-sdk-ios#frameworks
 
+### Background Modes for Bluetooth
+By default, iOS and Android may close a Bluetooth connection while the app is in the background.  To prevent this, we must configure the app build to have background capabilities.
+
+To enable background Bluetooth on iOS, you must first add the Background Modes capability and enable using Bluetooth LE accessories within that capability.  This will configure your app to request permissions to use Bluetooth in the background at runtime.  After adding the capability, you will also need to add two usage descriptions for iOS to use when prompting the user to allow Bluetooth access.
+
+To add Bluetooth background capability:
+* Select the project in the left navigation pane
+* Open the "Signing and Capabilities" tab
+* Click the "+ Capability" to add "Background Modes" 
+* Select "Uses Bluetooth LE Accessories".  
+![](https://www.dropbox.com/s/v9v4oyknmz0zg79/screenshot_ble_background_mode_xcode_13.png?raw=1)
+
+To add usage descriptions:
+* Open the "Info" tab of your project.
+* If not already present, hover over any entry in the property list to click a + button to add a new entry.
+* Enter "NSBluetoothPeripheralUsageDescription" 
+* Double click the value for your new property and enter a message to show to the user when the app first requests bluetooth.
+* Repeat for adding a property for "NSBluetoothAlwaysUsageDescription"
+![](https://www.dropbox.com/s/n44ztnlknd90eqk/screenshot_ble_usage_descriptions_xcode_13.png?raw=1)
+
+
 ### Gotchas
 
 * If using cocoapods, be sure to set "Build Libraries for Distribution" to "Yes" for the AWSMobileClient target of the pods project.  Otherwise you may experience an EXC_BAD_ACCESS error when retrieving JWT tokens.
@@ -25,7 +46,7 @@ Framework: https://github.com/aws-amplify/aws-sdk-ios#frameworks
 ## Authentication
 Once connected to an LM over BLE, you will need to provide authentication via an access token or app client credentials.  These can be obtained through Cognito either using the AWSMobileClient to obtain a token for an app login, or using a web interface to obtain a user token.  Both flows are shown in the demo code.
 
-## Documentation
+## API Documentation
 Please refer to the reference documentation for details on the SDK interfaces.  This documentation is auto generated from the Swift source of the internal SDK, but is exported to Objective C.  Some Objective C sample code is provided in the documentation, and of course the Objective C demo project provides usage for most of the SDK calls/callbacks.
 
 https://github.com/FullSwingGolf/lm-connect-sdk-ios/tree/main/Documentation/Reference

@@ -1,5 +1,26 @@
 # lm-connect-sdk-ios
 iOS SDK for discovering and connecting to FullSwing Kit devices over BLE.  This repository contains demonstration projects for integrating the SDK.  Both a Swift and an Objective C iOS project are provided here.
+In order to connect you must first request an AccountId and AccountKey from Full Swing Golf.
+
+The following data is provided per shot:
+* Club Speed - mph 
+* Ball Speed - mph 
+* Smash Factor 
+* Attack Angle - degrees 
+* Club Path - degrees 
+* Vertical Launch Angle - degrees 
+* Horizontal Launch Angle - degrees (negative is left, positive is right) 
+* Face Angle - degrees 
+* Spin Rate - rpm 
+* Spin Axis - degrees 
+* Carry Distance - yards 
+* Total Distance - yards 
+* Side - yards (negative is left, positive is right) 
+* Side Total - yards (negative is left, positive is right) 
+* Apex - yards 
+
+NOTES: If a value is null it means it could not be calculated.
+
 
 ## Installation / Project Setup
 The Releases section of this repository contains XCFramework builds to be used in external projects.  Fetch a tagged xcframework binary from the releases section and add this to the Frameworks and Libraries of your XCode project.  For the demo projects, this is referenced under the lib/ folder.

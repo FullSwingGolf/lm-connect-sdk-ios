@@ -41,6 +41,7 @@ final class ViewController: UIViewController
     @IBOutlet weak var sideCarryLabel: UILabel!
     @IBOutlet weak var sideTotalLabel: UILabel!
     
+    @IBOutlet weak var locationSelect: UIPickerView!
     @IBOutlet weak var clubSelect: UIPickerView!
     
     @IBOutlet weak var distanceLabel: UILabel!
@@ -50,8 +51,13 @@ final class ViewController: UIViewController
     @IBOutlet weak var shortShotLabel: UILabel!
     @IBOutlet weak var shortShot: UISwitch!
     
+    @IBOutlet weak var normalizedLabel: UILabel!
+    @IBOutlet weak var normalized: UISwitch!
+    
     private var connect: FSGConnect!
     private var data: AppData!
+    private var lastShot: ShotEvent?
+    private var lastShotNormalized: ShotEvent?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,12 +66,19 @@ final class ViewController: UIViewController
         navigationItem.backButtonTitle = "Disconnect"
         statusActivity.isHidden = true
         statusLabel.text = ""
+        normalized.setOn(true, animated: false)
         
         // Do any additional setup after loading the view.
         connect = FSGConnect.shared
         data = AppData.shared
         
         if let device = data.device {
+            device.setConfiguration(id: .location, value: Data([UInt8(LMLocation.outdoorRange.rawValue)])) { success, error in
+                print("Location Updated")
+            }
+            device.setConfiguration(id: .normalizedEnabled, value: Data([UInt8(1)])) { success, error in
+                print("Normalized Updated")
+            }
             device.connect(completion: self.deviceConnection(connected:error:))
             statusActivity.isHidden = false
         }
@@ -108,6 +121,7 @@ final class ViewController: UIViewController
         //self.showLiveVideo()
     }
     
+    // Update distance to pin
     @IBAction func distanceValueChanged(_ sender: Any)
     {
         self.distanceValueLabel.text = "\(Int(self.distanceSelect.value))"
@@ -122,6 +136,7 @@ final class ViewController: UIViewController
         }
     }
     
+    // Toggle Short shot on/off
     @IBAction func shortShotValueChanged(_ sender: Any)
     {
         if let device = data.device {
@@ -134,11 +149,32 @@ final class ViewController: UIViewController
         }
     }
     
+    // Toggle Normalized data on/off
+    @IBAction func normalizedValueChanged(_ sender: Any)
+    {
+        if let device = data.device {
+            device.setConfiguration(id: .normalizedEnabled, value: Data([self.normalized.isOn ? 0x1 : 0x0])) { success, error in
+                print("Normalized Updated ")
+            }
+        }
+        if self.normalized.isOn {
+            guard let shot = lastShotNormalized else { return }
+            displayShot(shot)
+        } else {
+            guard let shot = lastShot else { return }
+            displayShot(shot)
+        }
+    }
+    
+    // Device connected, do initial config and UI setup
     private func deviceConnection(connected: Bool, error: Error?)
     {
         if connected {
             data.device?.delegate = self
             data.device?.arm(completion: self.armComplete(success:error:))
+//            data.device?.setConfiguration(id: .dataDisplay, value: Data([UInt8(LMDataDisplay.multiDataPoint.rawValue)])) { success, error in
+//                print("Data Display Updated ")
+//            }
             
             title = data.device?.name
             
@@ -154,6 +190,9 @@ final class ViewController: UIViewController
             
             self.shortShot.isHidden = false
             self.shortShotLabel.isHidden = false
+            
+            self.normalized.isHidden = false
+            self.normalizedLabel.isHidden = false
             
             self.carryLabel.isHidden = false
             self.totalLabel.isHidden = false
@@ -174,6 +213,7 @@ final class ViewController: UIViewController
         }
     }
     
+    // Device disconnected, update UI
     private func deviceDisconnection(disconnected: Bool, error: Error?)
     {
         if disconnected {
@@ -191,6 +231,9 @@ final class ViewController: UIViewController
             
             self.shortShot.isHidden = true
             self.shortShotLabel.isHidden = true
+            
+            self.normalized.isHidden = true
+            self.normalizedLabel.isHidden = true
             
             self.connectButton.isHidden = true
             self.disconnectButton.isHidden = true
@@ -218,6 +261,7 @@ final class ViewController: UIViewController
         }
     }
     
+    // Arming complete, can do post setup here.
     private func armComplete(success: Bool, error: Error?)
     {
         
@@ -245,6 +289,24 @@ extension ViewController: LMDeviceDelegate
         self.sideCarryLabel.isHidden = false
         self.sideTotalLabel.isHidden = false
         
+        if event.type == .launch {
+            print("Launch Data")
+            lastShot = event
+        }
+        if event.type == .flight {
+            print("Flight Data")
+            lastShot = event
+        }
+        if event.type == .normalized {
+            print("Normalized Data")
+            lastShotNormalized = event
+        }
+        
+        displayShot(event)
+    }
+    
+    func displayShot(_ event: ShotEvent)
+    {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 2
@@ -359,6 +421,127 @@ extension ViewController: LMDeviceDelegate
         @unknown default:
             break
         }
+        print("StateChange: \(statusLabel.text)")
+    }
+
+    // Sample config de-serialize
+    func configurationChanged(_ event: ConfigChangedEvent)
+    {
+        switch event.configId {
+        case .autoArm:
+            let autoArm:Bool = (event.value[0] != 0)
+            print("AutoArm: \(autoArm)")
+        case .club:
+            guard let clubType = LMClubType.init(rawValue: Int(event.value[0])) else {
+                print("Bad Club Value")
+                return
+            }
+            print("Club: \(clubType)")
+        case .dataDisplay:
+            guard let dataDisplay = LMDataDisplay.init(rawValue: Int(event.value[0])) else {
+                print("Bad Data Display Value")
+                return
+            }
+            print("Data Display: \(dataDisplay)")
+        case .screenLayout:
+            var layout: [Int] = []
+            for val in event.value {
+                guard let dataPoint = LMDataType.init(rawValue: Int(val)) else {
+                    print("Bad Data Point Value")
+                    return
+                }
+                layout.append(dataPoint.rawValue)
+            }
+            print("Screen Layout: \(layout)")
+        case .distanceUnits:
+            guard let distance = LMDistanceUnits.init(rawValue: Int(event.value[0])) else {
+                print("Bad Distance Unit Value")
+                return
+            }
+            print("Disance Units: \(distance)")
+        case .apexUnits:
+            guard let apex = LMApexUnits.init(rawValue: Int(event.value[0])) else {
+                print("Bad apex Unit Value")
+                return
+            }
+            print("Apex Units: \(apex)")
+        case .speedUnits:
+            guard let speed = LMSpeedUnit.init(rawValue: Int(event.value[0])) else {
+                print("Bad speed Unit Value")
+                return
+            }
+            print("Speed Units: \(speed)")
+        case .elevationUnits:
+            guard let elevation = LMApexUnits.init(rawValue: Int(event.value[0])) else {
+                print("Bad elevation Unit Value")
+                return
+            }
+            print("Elevation Units: \(elevation)")
+        case .temperatureUnits:
+            guard let temp = TemperatureUnit.init(rawValue: Int(event.value[0])) else {
+                print("Bad temperature Unit Value")
+                return
+            }
+            print("Temperature Units: \(temp)")
+        case .location:
+            guard let location = LMLocation.init(rawValue: Int(event.value[0])) else {
+                print("Bad Location Value")
+                return
+            }
+            print("Location: \(location)")
+        case .elevation:
+            let elevation:Float = event.value.withUnsafeBytes {
+                $0.load(fromByteOffset: 0, as: Float.self)
+            }
+            print("Elevation: \(elevation)")
+        case .temperature:
+            let temperature:Float = event.value.withUnsafeBytes {
+                $0.load(fromByteOffset: 0, as: Float.self)
+            }
+            print("Temperature: \(temperature)")
+        case .autoShortShotEnabled:
+            let autoChip:Bool = (event.value[0] != 0)
+            print("Auto Short Shot Enabled: \(autoChip)")
+        case .shortShot:
+            let chipMode:Bool = (event.value[0] != 0)
+            print("Shot Shot Enabled: \(chipMode)")
+        case .distanceToPin:
+            let distance:Float = event.value.withUnsafeBytes {
+                $0.load(fromByteOffset: 0, as: Float.self)
+            }
+            print("Distance To Pin: \(distance)")
+        case .normalizedEnabled:
+            let enabled:Bool = (event.value[0] != 0)
+            print("Normalized Enabled: \(enabled)")
+        case .normalizedElevation:
+            let elevation:Float = event.value.withUnsafeBytes {
+                $0.load(fromByteOffset: 0, as: Float.self)
+            }
+            print("Normalized Elevation: \(elevation)")
+        case .normalizedTemperature:
+            let temperature:Float = event.value.withUnsafeBytes {
+                $0.load(fromByteOffset: 0, as: Float.self)
+            }
+            print("Normalized Temperature: \(temperature)")
+        case .normalizedIndoorBallType:
+            guard let ball = BallType.init(rawValue: Int(event.value[0])) else {
+                print("Bad Ball Type Value")
+                return
+            }
+            print("Normalized Indoor Ball Type: \(ball)")
+        case .normalizedOutdoorBallType:
+            guard let ball = BallType.init(rawValue: Int(event.value[0])) else {
+                print("Bad Ball Type Value")
+                return
+            }
+            print("Normalized Outdoor Ball Type: \(ball)")
+        case .videoRecordingEnabled:
+            let enabled:Bool = (event.value[0] != 0)
+            print("Video Recording Enabled: \(enabled)")
+        @unknown default:
+            print("Unknown config: \(event.configId)")
+        }
+        print("ConfigChange: \(event.configId)")
     }
     
     func batteryLevelChanged(_ level: UInt8)

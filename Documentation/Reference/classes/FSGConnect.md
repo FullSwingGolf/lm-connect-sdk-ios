@@ -9,6 +9,14 @@ public class FSGConnect: NSObject
 This class provides a means to find Launch Monitors and connect to them to receive shot data
 
 ## Properties
+### `shared`
+
+```swift
+static public var shared: FSGConnect = FSGConnect()
+```
+
+Shared instance
+
 ### `authorization`
 
 ```swift
@@ -103,13 +111,42 @@ Find all devices that are accessible by the SDK.
 | devices | List of devices found |
 | error | Any error that occurred during scan |
 
+### `findDevicesAsync(options:completion:)`
+
+```swift
+public func findDevicesAsync(options: [String:Any], completion: @escaping((_ devices: [LMDevice]?, _ error: Error?) -> Void)) throws -> Void
+```
+
+Find all devices that are accessible by the SDK.
+
+```swift
+    _connect.findDevicesAsync(options: ['scanDuration': 15.0], 
+                              completion: self.findDevicesComplete(devices:error:))
+```
+
+- note: This operation will run for 15 seconds by default.  Callback will be called each time a new device is found.
+
+- Parameter options: Dictionary containing optional options.  'scanDuration' take a Float of scan duration in seconds.
+- Parameter completion: Callback delegate containing a list of all found devices or an error.
+- Parameter devices: List of devices found
+- Parameter error: Any error that occurred during scan
+
+#### Parameters
+
+| Name | Description |
+| ---- | ----------- |
+| options | Dictionary containing optional options.  ‘scanDuration’ take a Float of scan duration in seconds. |
+| completion | Callback delegate containing a list of all found devices or an error. |
+| devices | List of devices found |
+| error | Any error that occurred during scan |
+
 ### `findDeviceAsync(identifier:completion:)`
 
 ```swift
 public func findDeviceAsync(identifier: String, completion: @escaping((_ devices: [LMDevice]?, _ error: Error?) -> Void)) throws -> Void
 ```
 
-Finds a known device.
+Finds a device based on Launch Monitor ID.
 
 - Parameter identifier: String LM identifier.
 - Parameter completion: Callback delegate containing a list of all found devices or an error.
@@ -121,6 +158,38 @@ Finds a known device.
 | Name | Description |
 | ---- | ----------- |
 | identifier | String LM identifier. |
+| completion | Callback delegate containing a list of all found devices or an error. |
+| devices | List of devices found |
+| error | Any error that occurred during scan |
+
+### `findDeviceAsync(identifier:options:completion:)`
+
+```swift
+public func findDeviceAsync(identifier: String, options: [String:Any], completion: @escaping((_ devices: [LMDevice]?, _ error: Error?) -> Void)) throws -> Void
+```
+
+Finds a device based on Launch Monitor ID.
+
+```swift
+    _connect.findDeviceAsync(identifier: 'fsgabcdefghijkl', 
+                             options: ['scanDuration': 15.0], 
+                             completion: self.findDevicesComplete(devices:error:))
+```
+
+- note: This operation will run for 15 seconds by default.  Callback will be called each time a new device is found.
+
+- Parameter identifier: String LM identifier.
+- Parameter options: Dictionary containing optional options.  'scanDuration' take a Float of scan duration in seconds.
+- Parameter completion: Callback delegate containing a list of all found devices or an error.
+- Parameter devices: List of devices found
+- Parameter error: Any error that occurred during scan
+
+#### Parameters
+
+| Name | Description |
+| ---- | ----------- |
+| identifier | String LM identifier. |
+| options | Dictionary containing optional options.  ‘scanDuration’ take a Float of scan duration in seconds. |
 | completion | Callback delegate containing a list of all found devices or an error. |
 | devices | List of devices found |
 | error | Any error that occurred during scan |

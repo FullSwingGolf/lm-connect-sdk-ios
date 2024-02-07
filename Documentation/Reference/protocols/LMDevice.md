@@ -31,6 +31,22 @@ Human friendly name for the Launch Monitor
 
 Uses the BLE advertised name
 
+### `connected`
+
+```swift
+var connected: Bool
+```
+
+Uses the BLE advertised name
+
+### `deviceInformation`
+
+```swift
+var deviceInformation: LMDeviceInformation
+```
+
+Device Information for the Launch Monitor
+
 ### `batterylevel`
 
 ```swift

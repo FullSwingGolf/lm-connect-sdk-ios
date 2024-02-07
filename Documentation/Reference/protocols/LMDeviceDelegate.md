@@ -27,6 +27,14 @@ func stateChangedEvent(_ event: StateChangedEvent)
 
 Called when a state change occurs for the LM or our connection to it
 
+### `configurationChanged(_:)`
+
+```swift
+func configurationChanged(_ event: ConfigChangedEvent)
+```
+
+Called when the value for short shot is updated
+
 ### `batteryLevelChanged(_:)`
 
 ```swift

@@ -26,3 +26,11 @@ case flight
 ```
 
 The shot type is flight when both launch and flight values are available
+
+### `normalized`
+
+```swift
+case normalized
+```
+
+The shot type is normalized  when normalized flight values are available

@@ -8,5 +8,22 @@ target 'SimulatorConnectObjCDemo' do
   use_frameworks!
 
   # Pods for LaunchMonitor
-  pod 'AWSMobileClient'
+  pod 'AWSMobileClient', '2.28.0'
+  
+  post_install do |installer|
+      installer.generated_projects.each do |project|
+        project.targets.each do |target|
+          # Set build for distribution on AWSMobileClient
+          if target.name == 'AWSMobileClient'
+            target.build_configurations.each do |config|
+              config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+            end
+          end
+          # Set deployment level for all targets
+          target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+          end
+        end
+     end
+  end
 end

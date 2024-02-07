@@ -11,6 +11,7 @@
 
 -(IBAction) clubSelectAction;
 -(IBAction) distanceAction;
+-(IBAction) normalizedAction;
 -(IBAction) shortShotAction;
 
 @property IBOutlet UILabel *deviceLabel;
@@ -45,6 +46,7 @@
 @property IBOutlet UILabel *sideCarryLabel;
 @property IBOutlet UILabel *sideTotalLabel;
 
+@property IBOutlet UIPickerView *locationSelect;
 @property IBOutlet UIPickerView *clubSelect;
 
 @property IBOutlet UILabel *distanceLabel;
@@ -53,6 +55,9 @@
 
 @property IBOutlet UILabel *shortShotLabel;
 @property IBOutlet UISwitch *shortShot;
+
+@property IBOutlet UILabel *normalizedLabel;
+@property IBOutlet UISwitch *normalized;
 
 @end
 

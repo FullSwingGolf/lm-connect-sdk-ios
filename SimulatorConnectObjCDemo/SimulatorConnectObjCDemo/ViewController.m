@@ -15,6 +15,8 @@
 @implementation ViewController{
     FSGConnect* _connect;
     AppData* _appData;
+    id<LMShot> _lastShot;
+    id<LMShot> _lastShotNormalized;
 }
 
 // Static array for club names in UIPicker
@@ -84,6 +86,17 @@
     
     // Connect to selected device
     [self->_statusActivity setHidden:false];
+    
+    unsigned char locationBytes[] = {LMLocationOutdoorRange};
+    NSData *locationData = [NSData dataWithBytes:locationBytes length:1];
+    [_appData.device setConfigurationWithId:LMConfigurationIdLocation value:locationData completion:^(BOOL, NSError * _Nullable) {
+        NSLog(@"Location Updated");
+    }];
+    unsigned char normalizedBytes[] = {_normalized.on};
+    NSData *normalizedData = [NSData dataWithBytes:normalizedBytes length:1];
+    [_appData.device setConfigurationWithId:LMConfigurationIdNormalizedEnabled value:normalizedData completion:^(BOOL, NSError * _Nullable) {
+        NSLog(@"Normalization Updated");
+    }];
     [_appData.device connectWithCompletion:^(BOOL connected, NSError * error) {
         NSLog(@"Connected: %@", self->_appData.device.name);
         
@@ -95,6 +108,7 @@
         
         [self->_clubSelectLabel setHidden:false];
         [self->_clubSelect setHidden:false];
+        [self->_locationSelect setHidden:false];
         
         [self->_distanceLabel setHidden:false];
         [self->_distanceValueLabel setHidden:false];
@@ -120,6 +134,10 @@
         [self->_sideCarryLabel setHidden:false];
         [self->_sideTotalLabel setHidden:false];
         
+        [self->_normalized setHidden:false];
+        [self->_normalizedLabel setHidden:false];
+        [self->_normalized setOn:true];
+        
         // Set LMDevice delegate to self and begin arm process
         [self->_appData.device setDelegate:self];
         [self->_appData.device armWithCompletion:^(BOOL armed, NSError * error) {
@@ -133,6 +151,22 @@
     [_appData.device disconnectWithCompletion:^(BOOL disconnected, NSError * error) {
         NSLog(@"Disconnected: %@", self->_appData.device.name);
     }];
+}
+
+- (void)normalizedAction
+{
+    NSLog(@"Normalized Selected %d", _normalized.on);
+    unsigned char bytes[] = {_normalized.on};
+    NSData *data = [NSData dataWithBytes:bytes length:1];
+    [_appData.device setConfigurationWithId:LMConfigurationIdNormalizedEnabled value:data completion:^(BOOL, NSError * _Nullable) {
+        NSLog(@"Normalized Updated");
+    }];
+    
+    if (self->_normalized.isOn) {
+        [self displayShot:_lastShot];
+    } else {
+        [self displayShot:_lastShotNormalized];
+    }
 }
 
 - (void)shortShotAction
@@ -164,6 +198,98 @@
     }];
 }
 
+- (void)displayShot:(id<LMShot>)shot
+{
+    // Print shot information to screen
+    if (shot.carryDistance != nil) {
+        [_carryLabel setText:[NSString stringWithFormat:@"Carry: %@", shot.carryDistance]];
+    }else{
+        [_carryLabel setText:[NSString stringWithFormat:@"Carry: ---"]];
+    }
+    if (shot.totalDistance != nil) {
+        [_totalLabel setText:[NSString stringWithFormat:@"Total: %@", shot.totalDistance]];
+    }else{
+        [_totalLabel setText:[NSString stringWithFormat:@"Total: ---"]];
+    }
+    
+    if (shot.spinRate != nil) {
+        [_spinRateLabel setText:[NSString stringWithFormat:@"Rate: %@", shot.spinRate]];
+    }else{
+        [_spinRateLabel setText:[NSString stringWithFormat:@"Rate: ---"]];
+    }
+    if (shot.spinAxis != nil) {
+        [_spinAxisLabel setText:[NSString stringWithFormat:@"Axis: %@", shot.spinAxis] ];
+    }else{
+        [_spinAxisLabel setText:[NSString stringWithFormat:@"Axis: ---"]];
+    }
+    
+    if (shot.ballSpeed != nil) {
+        [_ballSpeedLabel setText:[NSString stringWithFormat:@"Ball: %@", shot.ballSpeed]];
+    }else{
+        [_ballSpeedLabel setText:[NSString stringWithFormat:@"Ball: ---"]];
+    }
+    if (shot.clubSpeed != nil) {
+        [_clubSpeedLabel setText:[NSString stringWithFormat:@"Club: %@", shot.clubSpeed]];
+    }else{
+        [_clubSpeedLabel setText:[NSString stringWithFormat:@"Club: ---"]];
+    }
+    
+    if (shot.smashFactor != nil) {
+        [_smashLabel setText:[NSString stringWithFormat:@"Smash: %@", shot.smashFactor]];
+    }else{
+        [_smashLabel setText:[NSString stringWithFormat:@"Smash: ---"]];
+    }
+    if (shot.clubPath != nil) {
+        [_clubPathLabel setText:[NSString stringWithFormat:@"ClubPath: %@", shot.clubPath]];
+    }else{
+        [_clubPathLabel setText:[NSString stringWithFormat:@"ClubPath: ---"]];
+    }
+    
+    if (shot.faceAngle != nil) {
+        [_faceAngleLabel setText:[NSString stringWithFormat:@"Face: %@", shot.faceAngle]];
+    }else{
+        [_faceAngleLabel setText:[NSString stringWithFormat:@"Face: ---"]];
+    }
+    if (shot.faceAngle != nil) {
+        [_faceToPathLabel setText:[NSString stringWithFormat:@"FaceToPath: %@", shot.faceAngle]];
+    }else{
+        [_faceToPathLabel setText:[NSString stringWithFormat:@"FaceToPath: ---"]];
+    }
+    
+    if (shot.attackAngle != nil) {
+        [_attackLabel setText:[NSString stringWithFormat:@"Attack: %@", shot.attackAngle]];
+    }else{
+        [_attackLabel setText:[NSString stringWithFormat:@"Attack: ---"]];
+    }
+    if (shot.apex != nil) {
+        [_apexLabel setText:[NSString stringWithFormat:@"Apex: %@", shot.apex]];
+    }else{
+        [_apexLabel setText:[NSString stringWithFormat:@"Apex: ---"]];
+    }
+    
+    if (shot.vertlaunchAngle != nil) {
+        [_launchLabel setText:[NSString stringWithFormat:@"Vert: %@", shot.vertlaunchAngle]];
+    }else{
+        [_launchLabel setText:[NSString stringWithFormat:@"Vert: ---"]];
+    }
+    if (shot.horizLaunchAngle != nil) {
+        [_hLaunchLabel setText:[NSString stringWithFormat:@"Horiz: %@", shot.horizLaunchAngle]];
+    }else{
+        [_hLaunchLabel setText:[NSString stringWithFormat:@"Horiz: ---"]];
+    }
+    
+    if (shot.side != nil) {
+        [_sideCarryLabel setText:[NSString stringWithFormat:@"Side: %@", shot.side]];
+    }else{
+        [_sideCarryLabel setText:[NSString stringWithFormat:@"Side: ---"]];
+    }
+    if (shot.sideTotal != nil) {
+        [_sideTotalLabel setText:[NSString stringWithFormat:@"SideTotal: %@", shot.sideTotal]];
+    }else{
+        [_sideTotalLabel setText:[NSString stringWithFormat:@"SideTotal: ---"]];
+    }
+}
+
 #pragma mark - LMDeviceDelegate
 
 - (void)shotEvent:(id<ShotEvent>)event
@@ -188,94 +314,20 @@
     [self->_sideCarryLabel setHidden:false];
     [self->_sideTotalLabel setHidden:false];
     
-    // Print shot information to screen
-    if (event.shot.carryDistance != nil) {
-        [_carryLabel setText:[NSString stringWithFormat:@"Carry: %@", event.shot.carryDistance]];
-    }else{
-        [_carryLabel setText:[NSString stringWithFormat:@"Carry: ---"]];
+    if (event.type == LMShotTypeLaunch) {
+        NSLog(@"Launch Data");
+        _lastShot = event.shot;
     }
-    if (event.shot.totalDistance != nil) {
-        [_totalLabel setText:[NSString stringWithFormat:@"Total: %@", event.shot.totalDistance]];
-    }else{
-        [_totalLabel setText:[NSString stringWithFormat:@"Total: ---"]];
+    if (event.type == LMShotTypeFlight) {
+        NSLog(@"Flight Data");
+        _lastShot = event.shot;
     }
-    
-    if (event.shot.spinRate != nil) {
-        [_spinRateLabel setText:[NSString stringWithFormat:@"Rate: %@", event.shot.spinRate]];
-    }else{
-        [_spinRateLabel setText:[NSString stringWithFormat:@"Rate: ---"]];
-    }
-    if (event.shot.spinAxis != nil) {
-        [_spinAxisLabel setText:[NSString stringWithFormat:@"Axis: %@", event.shot.spinAxis] ];
-    }else{
-        [_spinAxisLabel setText:[NSString stringWithFormat:@"Axis: ---"]];
+    if (event.type == LMShotTypeNormalized) {
+        NSLog(@"Normalized Data");
+        _lastShotNormalized = event.shot;
     }
     
-    if (event.shot.ballSpeed != nil) {
-        [_ballSpeedLabel setText:[NSString stringWithFormat:@"Ball: %@", event.shot.ballSpeed]];
-    }else{
-        [_ballSpeedLabel setText:[NSString stringWithFormat:@"Ball: ---"]];
-    }
-    if (event.shot.clubSpeed != nil) {
-        [_clubSpeedLabel setText:[NSString stringWithFormat:@"Club: %@", event.shot.clubSpeed]];
-    }else{
-        [_clubSpeedLabel setText:[NSString stringWithFormat:@"Club: ---"]];
-    }
-    
-    if (event.shot.smashFactor != nil) {
-        [_smashLabel setText:[NSString stringWithFormat:@"Smash: %@", event.shot.smashFactor]];
-    }else{
-        [_smashLabel setText:[NSString stringWithFormat:@"Smash: ---"]];
-    }
-    if (event.shot.clubPath != nil) {
-        [_clubPathLabel setText:[NSString stringWithFormat:@"ClubPath: %@", event.shot.clubPath]];
-    }else{
-        [_clubPathLabel setText:[NSString stringWithFormat:@"ClubPath: ---"]];
-    }
-    
-    if (event.shot.faceAngle != nil) {
-        [_faceAngleLabel setText:[NSString stringWithFormat:@"Face: %@", event.shot.faceAngle]];
-    }else{
-        [_faceAngleLabel setText:[NSString stringWithFormat:@"Face: ---"]];
-    }
-    if (event.shot.faceAngle != nil) {
-        [_faceToPathLabel setText:[NSString stringWithFormat:@"FaceToPath: %@", event.shot.faceAngle]];
-    }else{
-        [_faceToPathLabel setText:[NSString stringWithFormat:@"FaceToPath: ---"]];
-    }
-    
-    if (event.shot.attackAngle != nil) {
-        [_attackLabel setText:[NSString stringWithFormat:@"Attack: %@", event.shot.attackAngle]];
-    }else{
-        [_attackLabel setText:[NSString stringWithFormat:@"Attack: ---"]];
-    }
-    if (event.shot.apex != nil) {
-        [_apexLabel setText:[NSString stringWithFormat:@"Apex: %@", event.shot.apex]];
-    }else{
-        [_apexLabel setText:[NSString stringWithFormat:@"Apex: ---"]];
-    }
-    
-    if (event.shot.vertlaunchAngle != nil) {
-        [_launchLabel setText:[NSString stringWithFormat:@"Vert: %@", event.shot.vertlaunchAngle]];
-    }else{
-        [_launchLabel setText:[NSString stringWithFormat:@"Vert: ---"]];
-    }
-    if (event.shot.horizLaunchAngle != nil) {
-        [_hLaunchLabel setText:[NSString stringWithFormat:@"Horiz: %@", event.shot.horizLaunchAngle]];
-    }else{
-        [_hLaunchLabel setText:[NSString stringWithFormat:@"Horiz: ---"]];
-    }
-    
-    if (event.shot.side != nil) {
-        [_sideCarryLabel setText:[NSString stringWithFormat:@"Side: %@", event.shot.side]];
-    }else{
-        [_sideCarryLabel setText:[NSString stringWithFormat:@"Side: ---"]];
-    }
-    if (event.shot.sideTotal != nil) {
-        [_sideTotalLabel setText:[NSString stringWithFormat:@"SideTotal: %@", event.shot.sideTotal]];
-    }else{
-        [_sideTotalLabel setText:[NSString stringWithFormat:@"SideTotal: ---"]];
-    }
+    [self displayShot:event.shot];
 }
 
 - (void)stateChangedEvent:(id<StateChangedEvent>)event
@@ -290,6 +342,7 @@
             
             [self->_clubSelectLabel setHidden:true];
             [self->_clubSelect setHidden:true];
+            [self->_locationSelect setHidden:true];
             
             [self->_distanceLabel setHidden:true];
             [self->_distanceValueLabel setHidden:true];
@@ -315,6 +368,9 @@
             [self->_sideCarryLabel setHidden:true];
             [self->_sideTotalLabel setHidden:true];
             
+            [self->_normalized setHidden:true];
+            [self->_normalizedLabel setHidden:true];
+            
             [[self navigationController] popViewControllerAnimated:true];
             break;
         case LMStateNotReady:
@@ -328,6 +384,84 @@
             break;
         case LMStateTracking:
             [self->_statusLabel setText:@"Tracking"];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)configurationChanged:(id<ConfigChangedEvent>)event
+{
+    NSLog(@"configuration %ld", (long)event.configId);
+    int iVal;
+    [event.value getBytes:&iVal length:sizeof(iVal)];
+    
+    bool bVal;
+    [event.value getBytes:&bVal length:sizeof(bVal)];
+    
+    float fVal;
+    [event.value getBytes:&fVal length:sizeof(fVal)];
+    
+    switch (event.configId) {
+        case LMConfigurationIdClub:
+            NSLog(@"Club %ld", (LMClubType)iVal);
+            break;
+        case LMConfigurationIdAutoArm:
+            NSLog(@"Auto Arm %d", bVal);
+            break;
+        case LMConfigurationIdDataDisplay:
+            NSLog(@"Data Display %ld", (LMDataDisplay)iVal);
+            break;
+        case LMConfigurationIdDistanceUnits:
+            NSLog(@"Distance Units %ld", (LMDistanceUnits)iVal);
+            break;
+        case LMConfigurationIdApexUnits:
+            NSLog(@"Apex Units %ld", (LMApexUnits)iVal);
+            break;
+        case LMConfigurationIdSpeedUnits:
+            NSLog(@"Speed Units %ld", (LMSpeedUnit)iVal);
+            break;
+        case LMConfigurationIdElevationUnits:
+            NSLog(@"Elevation Units %ld", (LMApexUnits)iVal);
+            break;
+        case LMConfigurationIdTemperatureUnits:
+            NSLog(@"Temperature Units %ld", (LMTemperatureUnit)iVal);
+            break;
+        case LMConfigurationIdLocation:
+            NSLog(@"Location %ld", (LMLocation)iVal);
+            break;
+        case LMConfigurationIdElevation:
+            NSLog(@"Elevation %f.2", fVal);
+            break;
+        case LMConfigurationIdTemperature:
+            NSLog(@"Temperature %f.2", fVal);
+            break;
+        case LMConfigurationIdShortShot:
+            NSLog(@"Short Shot %d", bVal);
+            break;
+        case LMConfigurationIdAutoShortShotEnabled:
+            NSLog(@"Short Shot Enabled %d", bVal);
+            break;
+        case LMConfigurationIdDistanceToPin:
+            NSLog(@"Distance To Pin %f.2", fVal);
+            break;
+        case LMConfigurationIdNormalizedEnabled:
+            NSLog(@"Normalized Enabled %d", bVal);
+            break;
+        case LMConfigurationIdNormalizedElevation:
+            NSLog(@"Normalized Elevation %f.2", fVal);
+            break;
+        case LMConfigurationIdNormalizedTemperature:
+            NSLog(@"Normalized Elevation %f.2", fVal);
+            break;
+        case LMConfigurationIdNormalizedIndoorBallType:
+            NSLog(@"Normalized Indoor Ball Type %ld", (LMBallType)iVal);
+            break;
+        case LMConfigurationIdNormalizedOutdoorBallType:
+            NSLog(@"Normalized Outdoor Ball Type %ld", (LMBallType)iVal);
+            break;
+        case LMConfigurationIdVideoRecordingEnabled:
+            NSLog(@"Video Recording Enabled %d", bVal);
             break;
         default:
             break;

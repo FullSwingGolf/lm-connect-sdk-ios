@@ -19,6 +19,19 @@
     id<LMShot> _lastShotNormalized;
 }
 
+// Static array for location names in UIPicker
++ (NSArray *)locationNames
+{
+    static NSArray *_locationNames;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _locationNames = @[
+            @"Net",
+            @"Screen",
+            @"Outdoor"];
+    });
+    return _locationNames;
+}
 // Static array for club names in UIPicker
 + (NSArray *)clubNames
 {
@@ -108,6 +121,8 @@
         
         [self->_clubSelectLabel setHidden:false];
         [self->_clubSelect setHidden:false];
+        
+        [self->_locationSelectLabel setHidden:false];
         [self->_locationSelect setHidden:false];
         
         [self->_distanceLabel setHidden:false];
@@ -342,6 +357,8 @@
             
             [self->_clubSelectLabel setHidden:true];
             [self->_clubSelect setHidden:true];
+            
+            [self->_locationSelectLabel setHidden:true];
             [self->_locationSelect setHidden:true];
             
             [self->_distanceLabel setHidden:true];
@@ -402,9 +419,26 @@
     float fVal;
     [event.value getBytes:&fVal length:sizeof(fVal)];
     
+    int locationVal = iVal;
+    switch (iVal) {
+        case 0:
+            locationVal = LMLocationNet;
+            break;
+        case 1:
+            locationVal = LMLocationScreen;
+            break;
+        default:
+            locationVal = LMLocationOutdoorRange;
+            break;
+    }
+    
     switch (event.configId) {
         case LMConfigurationIdClub:
             NSLog(@"Club %ld", (LMClubType)iVal);
+            // Set club picker
+            // FIXME: UI not updating
+            [self->_clubSelect selectRow:iVal inComponent:0 animated:true];
+            [self->_clubSelect reloadAllComponents];
             break;
         case LMConfigurationIdAutoArm:
             NSLog(@"Auto Arm %d", bVal);
@@ -429,6 +463,10 @@
             break;
         case LMConfigurationIdLocation:
             NSLog(@"Location %ld", (LMLocation)iVal);
+            // Set location picker
+            // FIXME: UI not updating
+            [self->_locationSelect selectRow:locationVal inComponent:0 animated:true];
+            [self->_locationSelect reloadAllComponents];
             break;
         case LMConfigurationIdElevation:
             NSLog(@"Elevation %f.2", fVal);
@@ -488,23 +526,54 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [[self class] clubNames].count;
+    if (pickerView == self->_clubSelect) {
+        return [[self class] clubNames].count;
+    } else {
+        return [[self class] locationNames].count;
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[self class] clubNames][row];
+    if (pickerView == self->_clubSelect) {
+        return [[self class] clubNames][row];
+    } else {
+        return [[self class] locationNames][row];
+    }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    LMClubType clubType = row;
-    NSLog(@"PickerView Selected %ld", (long)clubType);
-    unsigned char bytes[] = {clubType};
-    NSData *data = [NSData dataWithBytes:bytes length:1];
-    [_appData.device setConfigurationWithId:LMConfigurationIdClub value:data completion:^(BOOL, NSError * _Nullable) {
-        NSLog(@"Club Updated");
-    }];
+    if (pickerView == self->_clubSelect) {
+        LMClubType clubType = row;
+        NSLog(@"PickerView Selected %ld", (long)clubType);
+        unsigned char bytes[] = {clubType};
+        NSData *data = [NSData dataWithBytes:bytes length:1];
+        [_appData.device setConfigurationWithId:LMConfigurationIdClub value:data completion:^(BOOL, NSError * _Nullable) {
+            NSLog(@"Club Updated");
+        }];
+    } else {
+        LMLocation location = row;
+        switch (row) {
+            case 0:
+                location = LMLocationNet;
+                break;
+            case 1:
+                location = LMLocationScreen;
+                break;
+            case 2:
+                location = LMLocationOutdoorRange;
+                break;
+            default:
+                break;
+        }
+        NSLog(@"PickerView Selected %ld", (long)location);
+        unsigned char bytes[] = {location};
+        NSData *data = [NSData dataWithBytes:bytes length:1];
+        [_appData.device setConfigurationWithId:LMConfigurationIdLocation value:data completion:^(BOOL, NSError * _Nullable) {
+            NSLog(@"Location Updated");
+        }];
+    }
 }
 
 @end

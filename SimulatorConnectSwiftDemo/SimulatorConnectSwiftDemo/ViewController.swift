@@ -8,11 +8,59 @@
 import UIKit
 import SimulatorConnect
 
+enum SessionEnvironment: Int, StringCase {
+    case outdoor = 0
+    case screen
+    case net
+    
+    public var description: String {
+        switch self {
+        case .net: return "Net"
+        case .screen: return "Screen"
+        case .outdoor: return "Outdoor"
+        }
+    }
+    
+    var render: String {
+        switch self {
+        case .outdoor:
+            return "Outdoor"
+        case .screen:
+            return "Screen"
+        case .net:
+            return "Net"
+        }
+    }
+    
+    var location: LMLocation {
+        switch self {
+        case .screen:
+            return .screen
+        case .net:
+            return .net
+        case .outdoor:
+            return .outdoorRange
+        }
+    }
+    
+    static func fromLMLocation(location: LMLocation) -> SessionEnvironment {
+        switch location {
+        case .screen:
+            return .screen
+        case .net:
+            return .net
+        default:
+            return .outdoor
+        }
+    }
+}
+
 final class ViewController: UIViewController
 {
     @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var clubSelectLabel: UILabel!
+    @IBOutlet weak var locationSelectLabel: UILabel!
     @IBOutlet weak var statusActivity: UIActivityIndicatorView!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var disconnectButton: UIButton!
@@ -184,6 +232,9 @@ final class ViewController: UIViewController
             self.clubSelect.isHidden = false
             self.clubSelectLabel.isHidden = false
             
+            self.locationSelect.isHidden = false
+            self.locationSelectLabel.isHidden = false
+            
             self.distanceLabel.isHidden = false
             self.distanceValueLabel.isHidden = false
             self.distanceSelect.isHidden = false
@@ -224,6 +275,9 @@ final class ViewController: UIViewController
             
             self.clubSelect.isHidden = true
             self.clubSelectLabel.isHidden = true
+            
+            self.locationSelect.isHidden = true
+            self.locationSelectLabel.isHidden = true
             
             self.distanceLabel.isHidden = true
             self.distanceValueLabel.isHidden = true
@@ -437,6 +491,9 @@ extension ViewController: LMDeviceDelegate
                 return
             }
             print("Club: \(clubType)")
+            // FIXME: UI not updating
+            self.clubSelect.selectRow(clubType.rawValue, inComponent: 0, animated: true)
+            self.clubSelect.reloadAllComponents()
         case .dataDisplay:
             guard let dataDisplay = LMDataDisplay.init(rawValue: Int(event.value[0])) else {
                 print("Bad Data Display Value")
@@ -489,6 +546,10 @@ extension ViewController: LMDeviceDelegate
                 return
             }
             print("Location: \(location)")
+            let sessionLocation = SessionEnvironment.fromLMLocation(location: location)
+            // FIXME: UI not updating
+            self.locationSelect.selectRow(sessionLocation.rawValue, inComponent: 0, animated: true)
+            self.locationSelect.reloadAllComponents()
         case .elevation:
             let elevation:Float = event.value.withUnsafeBytes {
                 $0.load(fromByteOffset: 0, as: Float.self)
@@ -564,21 +625,39 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        LMClubType.caseStrings.count
+        if (pickerView == clubSelect) {
+            return LMClubType.caseStrings.count
+        } else {
+            // LMLocation: Screen, Net, Outdoor
+            return SessionEnvironment.caseStrings.count
+        }
     }
     
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return LMClubType.caseStrings[row]
+        if (pickerView == clubSelect) {
+            return LMClubType.caseStrings[row]
+        } else {
+            // Screen, Net, Outdoor
+            return SessionEnvironment.caseStrings[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        let clubType = LMClubType.allCases[row]
-        print("PickerView Selected \(row) \(LMClubType.caseStrings[row]) \(clubType.description)")
-        data.device?.setConfiguration(id: .club, value: Data([(UInt8)(clubType.rawValue)])) { success, error in
-            print("Club Updated \(clubType.description)")
+        if (pickerView == clubSelect) {
+            let clubType = LMClubType.allCases[row]
+            print("PickerView Selected \(row) \(LMClubType.caseStrings[row]) \(clubType.description)")
+            data.device?.setConfiguration(id: .club, value: Data([(UInt8)(clubType.rawValue)])) { success, error in
+                print("Club Updated \(clubType.description)")
+            }
+        } else {
+            let location = SessionEnvironment.allCases[row]
+            print("PickerView Selected \(row) \(SessionEnvironment.caseStrings[row]) \(location.description)")
+            data.device?.setConfiguration(id: .location, value: Data([(UInt8)(location.location.rawValue)])) { success, error in
+                print("Location Updated \(location.description)")
+            }
         }
     }
 }

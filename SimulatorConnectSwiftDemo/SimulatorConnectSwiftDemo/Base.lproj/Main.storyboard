@@ -218,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0N-C2-qKN" userLabel="Club Label">
-                                <rect key="frame" x="59" y="482" width="88" height="21"/>
+                                <rect key="frame" x="59" y="481" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -232,6 +232,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zLz-9z-W2i"/>
                                 </connections>
                             </pickerView>
+                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1U8-P7-f1F" userLabel="Location Select">
+                                <rect key="frame" x="198" y="367" width="219" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="fzz-iH-CI5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fxh-eu-yAx"/>
+                                </connections>
+                            </pickerView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSZ-dD-ii7" userLabel="Location Label">
+                                <rect key="frame" x="41" y="404" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -256,6 +271,8 @@
                         <outlet property="faceToPathLabel" destination="IhI-1i-1Vo" id="yY8-4F-sfn"/>
                         <outlet property="hLaunchLabel" destination="zUd-kh-jxv" id="bOe-8c-Z0Z"/>
                         <outlet property="launchLabel" destination="1gG-md-jMC" id="Z0Z-7a-tP4"/>
+                        <outlet property="locationSelect" destination="1U8-P7-f1F" id="Vgr-nf-JnX"/>
+                        <outlet property="locationSelectLabel" destination="kSZ-dD-ii7" id="c2A-0y-X42"/>
                         <outlet property="normalized" destination="3f2-gU-pGO" id="okp-2r-Nsd"/>
                         <outlet property="normalizedLabel" destination="3DF-hs-2bq" id="cDI-DS-HDw"/>
                         <outlet property="shortShot" destination="wUM-fM-gcY" id="cbG-9P-y8x"/>

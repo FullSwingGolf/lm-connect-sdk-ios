@@ -17,6 +17,7 @@
 @property IBOutlet UILabel *deviceLabel;
 @property IBOutlet UILabel *statusLabel;
 @property IBOutlet UILabel *clubSelectLabel;
+@property IBOutlet UILabel *locationSelectLabel;
 @property IBOutlet UIActivityIndicatorView *statusActivity;
 @property IBOutlet UIButton *connectButton;
 @property IBOutlet UIButton *disconnectButton;

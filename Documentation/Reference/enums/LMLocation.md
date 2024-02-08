@@ -3,7 +3,7 @@
 # `LMLocation`
 
 ```swift
-public enum LMLocation: Int, Codable
+public enum LMLocation: Int, Codable, StringCase
 ```
 
 The Launch Monitor location
@@ -43,4 +43,11 @@ case indoorRange
 
 ```swift
 case course
+```
+
+## Properties
+### `description`
+
+```swift
+public var description: String
 ```

@@ -25,7 +25,7 @@ NOTES: If a value is null it means it could not be calculated.
 ## Installation / Project Setup
 The Releases section of this repository contains XCFramework builds to be used in external projects.  Fetch a tagged xcframework binary from the releases section and add this to the Frameworks and Libraries of your XCode project.  For the demo projects, this is referenced under the lib/ folder.
 
-The SDK requires the use of AWSMobileClient SDK.  This is available through the aws-sdk-ios project linked below.  For the demo projects we include this using cocoapods.
+The SDK requires the use of AWSMobileClient SDK (v2.28.0).  This is available through the aws-sdk-ios project linked below.  For the demo projects we include this using cocoapods.  The XCF framwork version does not make the necssary code public and may not compile.
 
 https://github.com/aws-amplify/aws-sdk-ios
 
@@ -175,6 +175,7 @@ When connecting to a device, you should immediately set your delegate to receive
     }
 }
 ```
+
 
 Currently the only configuration values supported for writing to the LM Kit device are club type and Elevation.  
 Below is an example of setting the club type to Driver.  

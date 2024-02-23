@@ -100,6 +100,7 @@ id<LMDevice> _device;
 _connect = FSGConnect.shared;
 ```
 
+#### Initialize SDK
 Now you can choose how to perform authentication with the SDK.  If you have a client id and key pair, you can use the following.
 ```Objc
 // Use the following to authorize with an app key and start scanning for nearby devices
@@ -124,6 +125,7 @@ Now you can perform discovery when appropriate in your application flow.  This w
 }];
 ```
 
+#### Connect to Launch Monitor
 When connecting to a device, you should immediately set your delegate to receive state change and shot events as they come in.  You will also need to arm the device to prepare for collecting shot data.  See the LMDeviceDelegate example below for handling events.
 ```objc
 [_device connectWithCompletion:^(BOOL connected, NSError * error) {
@@ -177,6 +179,7 @@ When connecting to a device, you should immediately set your delegate to receive
 ```
 
 
+#### Configure Launch Monitor
 A number of configuration values are supported for writing to the LM Kit device.  These include location, club type, and Elevation.  
 Below is an example of setting the club type to Driver.  
 

@@ -177,8 +177,21 @@ When connecting to a device, you should immediately set your delegate to receive
 ```
 
 
-Currently the only configuration values supported for writing to the LM Kit device are club type and Elevation.  
+A number of configuration values are supported for writing to the LM Kit device.  These include location, club type, and Elevation.  
 Below is an example of setting the club type to Driver.  
+
+https://github.com/FullSwingGolf/lm-connect-sdk-ios/blob/main/Documentation/Reference/enums/LMConfigurationId.md
+
+Here is an example for setting the LM to Outdoor.
+```objc
+unsigned char locationBytes[] = {LMLocationOutdoorRange};
+NSData *locationData = [NSData dataWithBytes:locationBytes length:1];
+[_appData.device setConfigurationWithId:LMConfigurationIdLocation value:locationData completion:^(BOOL, NSError * _Nullable) {
+    NSLog(@"Location Updated");
+}];
+```
+
+Changing club to driver.
 ```objc
 LMClubType clubType = LMClubTypeDriver;
 unsigned char bytes[] = {clubType};

@@ -127,6 +127,9 @@ final class ViewController: UIViewController
             device.setConfiguration(id: .normalizedEnabled, value: Data([UInt8(1)])) { success, error in
                 print("Normalized Updated")
             }
+            device.getConfiguration(id: .firmwareVersion) { data, error in
+                print("Firmware Version \(data)")
+            }
             device.connect(completion: self.deviceConnection(connected:error:))
             statusActivity.isHidden = false
         }
@@ -599,6 +602,18 @@ extension ViewController: LMDeviceDelegate
         case .videoRecordingEnabled:
             let enabled:Bool = (event.value[0] != 0)
             print("Video Recording Enabled: \(enabled)")
+        case .firmwareVersion:
+            guard let version = String(data: event.value, encoding: .utf8) else {
+                print("Bad Firmware Version Value")
+                return
+            }
+            print("Firmware Version updated: \(version)")
+        case .radarVersion:
+            guard let version = String(data: event.value, encoding: .utf8) else {
+                print("Bad Radar Version Value")
+                return
+            }
+            print("Radar Version updated: \(version)")
         @unknown default:
             print("Unknown config: \(event.configId)")
         }

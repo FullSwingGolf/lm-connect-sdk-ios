@@ -176,3 +176,19 @@ case shortShot
 ```
 
 - Bool - Whether or not short shot mode is currently active
+
+### `firmwareVersion`
+
+```swift
+case firmwareVersion
+```
+
+- String - System Firmware Version
+
+### `radarVersion`
+
+```swift
+case radarVersion
+```
+
+- String - Radar Firmware Version

@@ -83,6 +83,14 @@ public func shutdown()
 
 This function should be called when the SDK is not longer in use to clean up resources.
 
+### `stopScan()`
+
+```swift
+public func stopScan()
+```
+
+Stop any running scans for devices.
+
 ### `findDevicesAsync(completion:)`
 
 ```swift

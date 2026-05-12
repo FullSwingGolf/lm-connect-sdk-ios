@@ -11,3 +11,9 @@ extension FSGConnect
 ```swift
 public func setAltitude(_ altitude: Float)
 ```
+
+### `setDistanceToScreen(_:)`
+
+```swift
+public func setDistanceToScreen(_ distance: Float)
+```

@@ -192,3 +192,11 @@ case radarVersion
 ```
 
 - String - Radar Firmware Version
+
+### `distanceToScreen`
+
+```swift
+case distanceToScreen
+```
+
+- Float - Distance from the hitting area to the screen, in feet

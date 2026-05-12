@@ -126,6 +126,10 @@ final class ViewController: UIViewController
             device.setConfiguration(id: .location, value: Data([UInt8(LMLocation.screen.rawValue)])) { success, error in
                 print("Location Updated")
             }
+            let distanceToScreen: Float = 10.0
+            device.setConfiguration(id: .distanceToScreen, value: Data(distanceToScreen.bytes)) { success, error in
+                print("Distance To Screen Updated")
+            }
             device.setConfiguration(id: .normalizedIndoorBallType, value: Data([UInt8(LMBallType.titleistRct.rawValue)])) { success, error in
                 print("Indoor Ball Updated")
             }
@@ -585,6 +589,11 @@ extension ViewController: LMDeviceDelegate
                 $0.load(fromByteOffset: 0, as: Float.self)
             }
             print("Distance To Pin: \(distance)")
+        case .distanceToScreen:
+            let distance:Float = event.value.withUnsafeBytes {
+                $0.load(fromByteOffset: 0, as: Float.self)
+            }
+            print("Distance To Screen: \(distance) ft")
         case .normalizedEnabled:
             let enabled:Bool = (event.value[0] != 0)
             print("Normalized Enabled: \(enabled)")
@@ -653,6 +662,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate
     {
         if (pickerView == clubSelect) {
             return LMClubType.caseStrings.count
+        } else if (pickerView == ballSelect) {
+            return LMBallType.caseStrings.count
         } else {
             // LMLocation: Screen, Net, Outdoor
             return SessionEnvironment.caseStrings.count
@@ -691,12 +702,6 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate
             print("PickerView Selected \(row) \(SessionEnvironment.caseStrings[row]) \(location.description)")
             data.device?.setConfiguration(id: .location, value: Data([(UInt8)(location.location.rawValue)])) { success, error in
                 print("Location Updated \(location.description)")
-            }
-            if location == .screen {
-                let distanceToScreen: Float = 10.0
-                data.device?.setConfiguration(id: .distanceToScreen, value: Data(distanceToScreen.bytes)) { success, error in
-                    print("Distance To Screen Updated \(distanceToScreen) ft")
-                }
             }
         }
     }

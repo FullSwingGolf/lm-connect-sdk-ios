@@ -105,6 +105,12 @@
     [_appData.device setConfigurationWithId:LMConfigurationIdLocation value:locationData completion:^(BOOL, NSError * _Nullable) {
         NSLog(@"Location Updated");
     }];
+    float distanceToScreen = 10.0f;
+    NSMutableData *distanceToScreenData = [NSMutableData dataWithCapacity:0];
+    [distanceToScreenData appendBytes:&distanceToScreen length:sizeof(float)];
+    [_appData.device setConfigurationWithId:LMConfigurationIdDistanceToScreen value:distanceToScreenData completion:^(BOOL, NSError * _Nullable) {
+        NSLog(@"Distance To Screen Updated");
+    }];
     unsigned char normalizedBytes[] = {_normalized.on};
     NSData *normalizedData = [NSData dataWithBytes:normalizedBytes length:1];
     [_appData.device setConfigurationWithId:LMConfigurationIdNormalizedEnabled value:normalizedData completion:^(BOOL, NSError * _Nullable) {
@@ -482,6 +488,9 @@
             break;
         case LMConfigurationIdDistanceToPin:
             NSLog(@"Distance To Pin %f.2", fVal);
+            break;
+        case LMConfigurationIdDistanceToScreen:
+            NSLog(@"Distance To Screen %.2f ft", fVal);
             break;
         case LMConfigurationIdNormalizedEnabled:
             NSLog(@"Normalized Enabled %d", bVal);

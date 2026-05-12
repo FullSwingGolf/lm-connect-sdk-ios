@@ -62,7 +62,7 @@
 		5F347B210EF8C99DA5AE531A /* Pods_SimulatorConnectObjCDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimulatorConnectObjCDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99386E1E92619AAC47FF48F /* Pods-SimulatorConnectObjCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorConnectObjCDemo.release.xcconfig"; path = "Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E64B34171F64CA591DC1EA83 /* Pods-SimulatorConnectObjCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorConnectObjCDemo.debug.xcconfig"; path = "Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		EE4FE1A626543FC700261CEA /* SimulatorConnectObjCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimulatorConnectObjCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4FE1A626543FC700261CEA /* LM Golf SDK ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LM Golf SDK ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4FE1A926543FC700261CEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE4FE1AA26543FC700261CEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EE4FE1AC26543FC700261CEA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		EE4FE1A726543FC700261CEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE4FE1A626543FC700261CEA /* SimulatorConnectObjCDemo.app */,
+				EE4FE1A626543FC700261CEA /* LM Golf SDK ObjC.app */,
 				EE4FE1C126543FCB00261CEA /* SimulatorConnectObjCDemoTests.xctest */,
 				EE4FE1CC26543FCB00261CEA /* SimulatorConnectObjCDemoUITests.xctest */,
 			);
@@ -235,7 +235,7 @@
 			);
 			name = SimulatorConnectObjCDemo;
 			productName = SimulatorConnectObjCDemo;
-			productReference = EE4FE1A626543FC700261CEA /* SimulatorConnectObjCDemo.app */;
+			productReference = EE4FE1A626543FC700261CEA /* LM Golf SDK ObjC.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EE4FE1C026543FCB00261CEA /* SimulatorConnectObjCDemoTests */ = {
@@ -352,9 +352,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -573,13 +577,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SimulatorConnectObjCDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "LM Golf SDK ObjC";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectObjCDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "LM Golf SDK ObjC";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -594,13 +599,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SimulatorConnectObjCDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "LM Golf SDK ObjC";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fsg.kit.SimulatorConnectObjCDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "LM Golf SDK ObjC";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

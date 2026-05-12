@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RDw-c6-rpR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RDw-c6-rpR">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="deviceVC" id="BYZ-38-t0r" customClass="ViewController" customModule="SimulatorConnectSwiftDemo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="deviceVC" id="BYZ-38-t0r" customClass="ViewController" customModule="LM_Golf_SDK_Swift" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,35 +168,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="4fV-e8-OWE">
-                                <rect key="frame" x="222" y="580" width="138" height="30"/>
+                                <rect key="frame" x="222" y="596" width="138" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="distanceValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="o0f-Qp-sqJ"/>
                                 </connections>
                             </slider>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-fM-gcY" userLabel="Short Shot">
-                                <rect key="frame" x="281" y="618" width="49" height="31"/>
+                                <rect key="frame" x="281" y="634" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="shortShotValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="6wd-IV-AEC"/>
                                 </connections>
                             </switch>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance To Pin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3l0-7r-APo" userLabel="Distance Label">
-                                <rect key="frame" x="41" y="584" width="118" height="21"/>
+                                <rect key="frame" x="41" y="600" width="118" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Short Shot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdQ-OY-Mw5" userLabel="Short Shot Label">
-                                <rect key="frame" x="59" y="623" width="82" height="21"/>
+                                <rect key="frame" x="59" y="639" width="82" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3f2-gU-pGO" userLabel="Normalized">
-                                <rect key="frame" x="281" y="541" width="49" height="31"/>
+                                <rect key="frame" x="281" y="557" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="normalizedValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="c4t-TM-7ug"/>
@@ -204,7 +204,7 @@
                                 </connections>
                             </switch>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Normalized" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DF-hs-2bq" userLabel="Normalized Label">
-                                <rect key="frame" x="59" y="546" width="87" height="21"/>
+                                <rect key="frame" x="59" y="562" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -218,14 +218,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0N-C2-qKN" userLabel="Club Label">
-                                <rect key="frame" x="59" y="481" width="88" height="21"/>
+                                <rect key="frame" x="59" y="506" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zuh-fF-dEM" userLabel="Club Select">
-                                <rect key="frame" x="198" y="444" width="219" height="94"/>
+                                <rect key="frame" x="198" y="469" width="219" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="dT2-sj-38J"/>
@@ -233,7 +233,7 @@
                                 </connections>
                             </pickerView>
                             <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1U8-P7-f1F" userLabel="Location Select">
-                                <rect key="frame" x="198" y="367" width="219" height="94"/>
+                                <rect key="frame" x="198" y="346" width="219" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="fzz-iH-CI5"/>
@@ -241,7 +241,22 @@
                                 </connections>
                             </pickerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSZ-dD-ii7" userLabel="Location Label">
-                                <rect key="frame" x="41" y="404" width="118" height="21"/>
+                                <rect key="frame" x="41" y="383" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ogz-E8-fMd" userLabel="Ball Select">
+                                <rect key="frame" x="198" y="404" width="219" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DSA-0U-l7t"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mtC-QM-tdp"/>
+                                </connections>
+                            </pickerView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Ball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIL-Ha-gsX" userLabel="Ball Label">
+                                <rect key="frame" x="66" y="441" width="80" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -255,6 +270,8 @@
                     <connections>
                         <outlet property="apexLabel" destination="0Ci-dt-3I5" id="fIo-KW-zgr"/>
                         <outlet property="attackLabel" destination="Jnc-q5-roY" id="O2E-QJ-GYb"/>
+                        <outlet property="ballSelect" destination="Ogz-E8-fMd" id="16P-Sy-Qdv"/>
+                        <outlet property="ballSelectLabel" destination="XIL-Ha-gsX" id="dzU-YW-hG4"/>
                         <outlet property="ballSpeedLabel" destination="oKs-2R-imL" id="HSb-TL-1BY"/>
                         <outlet property="carryLabel" destination="cKy-vD-fat" id="Kjf-24-kCy"/>
                         <outlet property="clubPathLabel" destination="ROp-zn-4zl" id="wLV-7R-ves"/>
@@ -294,7 +311,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="ImQ-FT-r8l">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RDw-c6-rpR" customClass="NavigationViewController" customModule="SimulatorConnectSwiftDemo" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RDw-c6-rpR" customClass="NavigationViewController" customModule="LM_Golf_SDK_Swift" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jMe-Ax-ue3">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -312,7 +329,7 @@
         <!--Device Table View Controller-->
         <scene sceneID="vKe-Yg-zwB">
             <objects>
-                <tableViewController storyboardIdentifier="deviceTableVC" id="i4Y-4l-ot0" customClass="DeviceTableViewController" customModule="SimulatorConnectSwiftDemo" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="deviceTableVC" id="i4Y-4l-ot0" customClass="DeviceTableViewController" customModule="LM_Golf_SDK_Swift" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pMB-de-5al">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

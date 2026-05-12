@@ -95,7 +95,7 @@
     [[self navigationItem] setBackButtonTitle:@"Disconnect"];
     
     // Get our shared application data
-    _appData = AppData.sharedManager;
+    _appData = AppData.sharedManager; 
     
     // Connect to selected device
     [self->_statusActivity setHidden:false];

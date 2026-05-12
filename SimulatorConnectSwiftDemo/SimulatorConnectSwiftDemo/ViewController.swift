@@ -59,6 +59,7 @@ final class ViewController: UIViewController
 {
     @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var ballSelectLabel: UILabel!
     @IBOutlet weak var clubSelectLabel: UILabel!
     @IBOutlet weak var locationSelectLabel: UILabel!
     @IBOutlet weak var statusActivity: UIActivityIndicatorView!
@@ -91,6 +92,7 @@ final class ViewController: UIViewController
     
     @IBOutlet weak var locationSelect: UIPickerView!
     @IBOutlet weak var clubSelect: UIPickerView!
+    @IBOutlet weak var ballSelect: UIPickerView!
     
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var distanceValueLabel: UILabel!
@@ -121,14 +123,20 @@ final class ViewController: UIViewController
         data = AppData.shared
         
         if let device = data.device {
-            device.setConfiguration(id: .location, value: Data([UInt8(LMLocation.outdoorRange.rawValue)])) { success, error in
+            device.setConfiguration(id: .location, value: Data([UInt8(LMLocation.screen.rawValue)])) { success, error in
                 print("Location Updated")
+            }
+            device.setConfiguration(id: .normalizedIndoorBallType, value: Data([UInt8(LMBallType.titleistRct.rawValue)])) { success, error in
+                print("Indoor Ball Updated")
             }
             device.setConfiguration(id: .normalizedEnabled, value: Data([UInt8(1)])) { success, error in
                 print("Normalized Updated")
             }
             device.getConfiguration(id: .firmwareVersion) { data, error in
                 print("Firmware Version \(data)")
+            }
+            device.getConfiguration(id: .normalizedIndoorBallType) { data, error in
+                print("Indoor Ball Type \(data)")
             }
             device.connect(completion: self.deviceConnection(connected:error:))
             statusActivity.isHidden = false
@@ -234,6 +242,9 @@ final class ViewController: UIViewController
             
             self.clubSelect.isHidden = false
             self.clubSelectLabel.isHidden = false
+            
+            self.ballSelect.isHidden = false
+            self.ballSelectLabel.isHidden = false
             
             self.locationSelect.isHidden = false
             self.locationSelectLabel.isHidden = false
@@ -653,6 +664,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate
     {
         if (pickerView == clubSelect) {
             return LMClubType.caseStrings[row]
+        } else if (pickerView == ballSelect) {
+            return LMBallType.caseStrings[row]
         } else {
             // Screen, Net, Outdoor
             return SessionEnvironment.caseStrings[row]
@@ -667,11 +680,23 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate
             data.device?.setConfiguration(id: .club, value: Data([(UInt8)(clubType.rawValue)])) { success, error in
                 print("Club Updated \(clubType.description)")
             }
+        } else if (pickerView == ballSelect) {
+            let ballType = LMBallType.allCases[row]
+            print("PickerView Selected \(row) \(LMBallType.caseStrings[row]) \(ballType.description)")
+            data.device?.setConfiguration(id: .normalizedIndoorBallType, value: Data([(UInt8)(ballType.rawValue)])) { success, error in
+                print("Ball Updated \(ballType.description)")
+            }
         } else {
             let location = SessionEnvironment.allCases[row]
             print("PickerView Selected \(row) \(SessionEnvironment.caseStrings[row]) \(location.description)")
             data.device?.setConfiguration(id: .location, value: Data([(UInt8)(location.location.rawValue)])) { success, error in
                 print("Location Updated \(location.description)")
+            }
+            if location == .screen {
+                let distanceToScreen: Float = 10.0
+                data.device?.setConfiguration(id: .distanceToScreen, value: Data(distanceToScreen.bytes)) { success, error in
+                    print("Distance To Screen Updated \(distanceToScreen) ft")
+                }
             }
         }
     }

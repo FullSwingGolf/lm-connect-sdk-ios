@@ -25,17 +25,7 @@ NOTES: If a value is null it means it could not be calculated.
 ## Installation / Project Setup
 The Releases section of this repository contains XCFramework builds to be used in external projects.  Fetch a tagged xcframework binary from the releases section and add this to the Frameworks and Libraries of your XCode project.  For the demo projects, this is referenced under the lib/ folder.
 
-The SDK requires the use of AWSMobileClient SDK (v2.28.0).  This is available through the aws-sdk-ios project linked below.  For the demo projects we include this using cocoapods.  The XCF framwork version does not make the necssary code public and may not compile.
-
-https://github.com/aws-amplify/aws-sdk-ios
-
-See installation instructions for:
-
-Cocoapods: https://github.com/aws-amplify/aws-sdk-ios#cocoapods
-
-Carthage: https://github.com/aws-amplify/aws-sdk-ios#carthage
-
-Framework: https://github.com/aws-amplify/aws-sdk-ios#frameworks
+The SDK has no third-party dependencies and requires iOS 15.0 or later.  Set the framework to "Embed & Sign" in your application target.
 
 ### Background Modes for Bluetooth
 By default, iOS and Android may close a Bluetooth connection while the app is in the background.  To prevent this, we must configure the app build to have background capabilities.
@@ -57,15 +47,11 @@ To add usage descriptions:
 * Repeat for adding a property for "NSBluetoothAlwaysUsageDescription"
 ![](https://www.dropbox.com/s/n44ztnlknd90eqk/screenshot_ble_usage_descriptions_xcode_13.png?raw=1)
 
-
-### Gotchas
-
-* If using cocoapods, be sure to set "Build Libraries for Distribution" to "Yes" for the AWSMobileClient target of the pods project.  Otherwise you may experience an EXC_BAD_ACCESS error when retrieving JWT tokens.
-
-* Add the awsconfiguration.json file to your application project.  It should be included in the Copy Bundle Resources Build Phase of your application target as well.  Without this, the AWS SDK will not be able to connect to the correct AWS resources.  
-
 ## Authentication
-Once connected to an LM over BLE, you will need to provide authentication via an access token or app client credentials.  These can be obtained through Cognito either using the AWSMobileClient to obtain a token for an app login, or using a web interface to obtain a user token.  Both flows are shown in the demo code.
+Once connected to an LM over BLE, you will need to provide authentication via an Account ID and Account Key, or a user token.  Both flows are shown in the demo code.
+
+* Account ID and Account Key: the SDK signs in, caches the resulting token in the keychain, and refreshes it before arming a device.  After the first successful sign in, devices can be armed without a network connection.
+* User token: obtained by your application, for example through the web login shown in the demo code.  The SDK does not refresh a token supplied this way; call `initializeWithAccessToken:` again with a new token before it expires.
 
 ## API Documentation
 Please refer to the reference documentation for details on the SDK interfaces.  This documentation is auto generated from the Swift source of the internal SDK, but is exported to Objective C.  Some Objective C sample code is provided in the documentation, and of course the Objective C demo project provides usage for most of the SDK calls/callbacks.
@@ -103,10 +89,13 @@ _connect = FSGConnect.shared;
 #### Initialize SDK
 Now you can choose how to perform authentication with the SDK.  If you have a client id and key pair, you can use the following.
 ```Objc
-// Use the following to authorize with an app key and start scanning for nearby devices
-NSError __autoreleasing *error = nil;
-[_connect initializeWithAcountId:@"ACCOUNT_ID_HERE" accountKey:@"ACCOUNT_KEY_HERE" error:&error];
+// Use the following to authorize with an app key
+[_connect initializeWithAcountId:@"ACCOUNT_ID_HERE" accountKey:@"ACCOUNT_KEY_HERE" completion:^(NSError * _Nullable error) {
+    // error is nil when sign in succeeds
+}];
 ```
+
+Sign in completes asynchronously.  Device discovery can start before it finishes, but a device cannot be connected until sign in succeeds unless a token from an earlier sign in is cached.
 
 Otherwise, you will need to fetch a valid JSON Web Token using a user's credentials.  In the demo projects, there is an example of using ASWebAuthenticationSession to provide a user with a web login and retrieving their token for use in the SDK.  
 ```Objc

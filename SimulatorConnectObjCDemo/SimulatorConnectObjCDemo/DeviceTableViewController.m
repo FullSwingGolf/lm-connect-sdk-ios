@@ -38,8 +38,12 @@
     //[presenter showSignin: self];
     
     // Uncomment the following to authorize with an app key and start scanning for nearby devices
+    [_connect initializeWithAcountId:@"ACCOUNT_ID_HERE" accountKey:@"ACCOUNT_KEY_HERE" completion:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Sign in failed: %@", error);
+        }
+    }];
     NSError __autoreleasing *error = nil;
-    [_connect initializeWithAcountId:@"ACCOUNT_ID_HERE" accountKey:@"ACCOUNT_KEY_HERE" error:&error];
     [_connect findDevicesAsyncAndReturnError:&error completion:^(NSArray<id<LMDevice>> * devices, NSError * error) {
         [self findDevicesComplete:devices error:error];
     }];

@@ -15,5 +15,5 @@ public func setAltitude(_ altitude: Float)
 ### `setDistanceToScreen(_:)`
 
 ```swift
-public func setDistanceToScreen(_ distance: Float)
+public func setDistanceToScreen(_ distance: LMDistanceToScreen)
 ```

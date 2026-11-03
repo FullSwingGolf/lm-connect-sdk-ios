@@ -199,4 +199,4 @@ case radarVersion
 case distanceToScreen
 ```
 
-- Float - Distance from the hitting area to the screen, in feet
+- LMDistanceToScreen - Distance from the hitting area to the screen

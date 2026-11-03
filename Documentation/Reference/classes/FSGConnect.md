@@ -45,7 +45,8 @@ public func initialize(accessToken: String)
 ```
 
 This function must be called prior to utilizing anything else in the SDK. This
-implementation is called when a token has be acquired prior to initializing the SDK
+implementation is called when a token has be acquired prior to initializing the SDK.
+The SDK does not refresh a token supplied this way.
 
 - Parameter accesToken: The access token
 
@@ -63,7 +64,10 @@ public func initialize(acountId: String, accountKey: String) throws -> Void
 
 This function must be called prior to utilizing anything else in the SDK. This
 implementation is called when an Account ID and Account Key are used to access
-the SDK. These can be stored in the application or passed in by the user
+the SDK. These can be stored in the application or passed in by the user.
+
+Sign-in completes asynchronously and failures are not reported;
+use `initialize(acountId:accountKey:completion:)` to observe the result.
 
 - Parameter acountId: The callers account ID
 - Parameter accountKey: The callers account key
@@ -74,6 +78,28 @@ the SDK. These can be stored in the application or passed in by the user
 | ---- | ----------- |
 | acountId | The callers account ID |
 | accountKey | The callers account key |
+
+### `initialize(acountId:accountKey:completion:)`
+
+```swift
+public func initialize(acountId: String, accountKey: String, completion: @escaping (Error?) -> Void)
+```
+
+This function must be called prior to utilizing anything else in the SDK. This
+implementation is called when an Account ID and Account Key are used to access
+the SDK. These can be stored in the application or passed in by the user.
+
+- Parameter acountId: The callers account ID
+- Parameter accountKey: The callers account key
+- Parameter completion: Called on the main queue with nil on success, or the sign-in error
+
+#### Parameters
+
+| Name | Description |
+| ---- | ----------- |
+| acountId | The callers account ID |
+| accountKey | The callers account key |
+| completion | Called on the main queue with nil on success, or the sign-in error |
 
 ### `shutdown()`
 

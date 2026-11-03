@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC975CEDCE05A5179FF171F7 /* Pods_SimulatorConnectObjCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F347B210EF8C99DA5AE531A /* Pods_SimulatorConnectObjCDemo.framework */; };
 		EE4FE1AB26543FC700261CEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1AA26543FC700261CEA /* AppDelegate.m */; };
 		EE4FE1AE26543FC700261CEA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1AD26543FC700261CEA /* SceneDelegate.m */; };
 		EE4FE1B126543FC700261CEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE4FE1B026543FC700261CEA /* ViewController.m */; };
@@ -22,7 +21,6 @@
 		EE7E1172265D8BC7009A4EE5 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7E1168265D7E64009A4EE5 /* NavigationViewController.m */; };
 		EE7E1173265D8BCA009A4EE5 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7E116B265D7E83009A4EE5 /* DeviceTableViewController.m */; };
 		EE7E1176265D932C009A4EE5 /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7E1175265D932C009A4EE5 /* AppData.m */; };
-		EE7E1245265ED9FD009A4EE5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE7E1244265ED9FD009A4EE5 /* awsconfiguration.json */; };
 		EEBB44F026691F1E00BE61BA /* SimulatorConnect.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBB44EE26691EDF00BE61BA /* SimulatorConnect.xcframework */; };
 		EEBB44F126691F1E00BE61BA /* SimulatorConnect.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEBB44EE26691EDF00BE61BA /* SimulatorConnect.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -59,9 +57,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5F347B210EF8C99DA5AE531A /* Pods_SimulatorConnectObjCDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimulatorConnectObjCDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A99386E1E92619AAC47FF48F /* Pods-SimulatorConnectObjCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorConnectObjCDemo.release.xcconfig"; path = "Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo.release.xcconfig"; sourceTree = "<group>"; };
-		E64B34171F64CA591DC1EA83 /* Pods-SimulatorConnectObjCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorConnectObjCDemo.debug.xcconfig"; path = "Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		EE4FE1A626543FC700261CEA /* LM Golf SDK ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LM Golf SDK ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4FE1A926543FC700261CEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE4FE1AA26543FC700261CEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,7 +84,6 @@
 		EE7E116B265D7E83009A4EE5 /* DeviceTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewController.m; sourceTree = "<group>"; };
 		EE7E1174265D932C009A4EE5 /* AppData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
 		EE7E1175265D932C009A4EE5 /* AppData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
-		EE7E1244265ED9FD009A4EE5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		EEBB44EE26691EDF00BE61BA /* SimulatorConnect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SimulatorConnect.xcframework; path = ../lib/SimulatorConnect.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +94,6 @@
 			files = (
 				EEBB44F026691F1E00BE61BA /* SimulatorConnect.xcframework in Frameworks */,
 				EE4FE1E826544C8600261CEA /* AuthenticationServices.framework in Frameworks */,
-				CC975CEDCE05A5179FF171F7 /* Pods_SimulatorConnectObjCDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,8 +117,6 @@
 		13E54E51B335AAC9B54BF979 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E64B34171F64CA591DC1EA83 /* Pods-SimulatorConnectObjCDemo.debug.xcconfig */,
-				A99386E1E92619AAC47FF48F /* Pods-SimulatorConnectObjCDemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -133,7 +124,6 @@
 		EE4FE19D26543FC700261CEA = {
 			isa = PBXGroup;
 			children = (
-				EE7E1244265ED9FD009A4EE5 /* awsconfiguration.json */,
 				EE4FE1A826543FC700261CEA /* SimulatorConnectObjCDemo */,
 				EE4FE1C426543FCB00261CEA /* SimulatorConnectObjCDemoTests */,
 				EE4FE1CF26543FCB00261CEA /* SimulatorConnectObjCDemoUITests */,
@@ -201,7 +191,6 @@
 			children = (
 				EEBB44EE26691EDF00BE61BA /* SimulatorConnect.xcframework */,
 				EE4FE1E726544C8600261CEA /* AuthenticationServices.framework */,
-				5F347B210EF8C99DA5AE531A /* Pods_SimulatorConnectObjCDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,12 +211,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE4FE1D526543FCB00261CEA /* Build configuration list for PBXNativeTarget "SimulatorConnectObjCDemo" */;
 			buildPhases = (
-				453F1C4DDE12057794C789F2 /* [CP] Check Pods Manifest.lock */,
 				EE4FE1A226543FC700261CEA /* Sources */,
 				EE4FE1A326543FC700261CEA /* Frameworks */,
 				EE4FE1A426543FC700261CEA /* Resources */,
 				EE7E116F265D8022009A4EE5 /* Embed Frameworks */,
-				1592D039E627CCEFDF4F3F18 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE7E1245265ED9FD009A4EE5 /* awsconfiguration.json in Resources */,
 				EE7E1171265D8914009A4EE5 /* Main.storyboard in Resources */,
 				EE4FE1B926543FCB00261CEA /* LaunchScreen.storyboard in Resources */,
 				EE4FE1B626543FCB00261CEA /* Assets.xcassets in Resources */,
@@ -342,52 +328,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1592D039E627CCEFDF4F3F18 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimulatorConnectObjCDemo/Pods-SimulatorConnectObjCDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		453F1C4DDE12057794C789F2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SimulatorConnectObjCDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE4FE1A226543FC700261CEA /* Sources */ = {
@@ -507,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -560,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -570,7 +510,6 @@
 		};
 		EE4FE1D626543FCB00261CEA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E64B34171F64CA591DC1EA83 /* Pods-SimulatorConnectObjCDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -578,7 +517,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SimulatorConnectObjCDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "LM Golf SDK ObjC";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,7 +531,6 @@
 		};
 		EE4FE1D726543FCB00261CEA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A99386E1E92619AAC47FF48F /* Pods-SimulatorConnectObjCDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -600,7 +538,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SimulatorConnectObjCDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "LM Golf SDK ObjC";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -619,7 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSZ38AZEKN;
 				INFOPLIST_FILE = SimulatorConnectObjCDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,7 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSZ38AZEKN;
 				INFOPLIST_FILE = SimulatorConnectObjCDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

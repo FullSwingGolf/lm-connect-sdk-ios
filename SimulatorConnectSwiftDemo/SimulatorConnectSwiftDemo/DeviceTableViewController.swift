@@ -7,7 +7,6 @@
 
 import UIKit
 import SimulatorConnect
-import AWSMobileClient
 
 class DeviceTableViewController: UITableViewController
 {
@@ -39,8 +38,12 @@ class DeviceTableViewController: UITableViewController
 //        })
         
         // Uncomment the following to authorize with an app key and start scanning for nearby devices
+        self.connect.initialize(acountId: "ACCOUNT_ID_HERE", accountKey: "ACCOUNT_KEY_HERE") { error in
+            if let error = error {
+                print("Sign in failed: \(error)")
+            }
+        }
         do {
-            try self.connect.initialize(acountId: "ACCOUNT_ID_HERE", accountKey: "ACCOUNT_KEY_HERE")
             try self.connect.findDevicesAsync(completion: self.findDevicesComplete(devices:error:))
         } catch {}
     }
